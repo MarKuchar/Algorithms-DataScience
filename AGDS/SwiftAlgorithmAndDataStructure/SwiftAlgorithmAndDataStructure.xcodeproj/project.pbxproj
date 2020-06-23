@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
+		95393C5E24A2C22700FF92F0 /* String+DPStringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5D24A2C22700FF92F0 /* String+DPStringTool.swift */; };
+		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +27,9 @@
 /* Begin PBXFileReference section */
 		95393C4F24A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmAndDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		95393C5224A26EFF00FF92F0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
-		95393C5924A2BCC900FF92F0 /* story.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = story.txt; path = "../../../../Swift/AlgorithmAndDataSciece/Classes/Swift-AGDS/SwiftAGDS/Recursion/story.txt"; sourceTree = "<group>"; };
+		95393C5D24A2C22700FF92F0 /* String+DPStringTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+DPStringTool.swift"; path = "../../../../Classes/Swift-AGDS/SwiftAGDS/Utils/String+DPStringTool.swift"; sourceTree = "<group>"; };
+		95393C5F24A2C52E00FF92F0 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
+		95393C6124A2C5B800FF92F0 /* story.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = story.txt; path = "../../../Classes/Swift-AGDS/SwiftAGDS/Recursion/story.txt"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,9 +62,10 @@
 		95393C5124A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				95393C5C24A2C21500FF92F0 /* Utis */,
 				95393C5A24A2BCE100FF92F0 /* Recursion */,
 				95393C5224A26EFF00FF92F0 /* main.swift */,
-				95393C5924A2BCC900FF92F0 /* story.txt */,
+				95393C6124A2C5B800FF92F0 /* story.txt */,
 			);
 			path = SwiftAlgorithmAndDataStructure;
 			sourceTree = "<group>";
@@ -68,8 +73,17 @@
 		95393C5A24A2BCE100FF92F0 /* Recursion */ = {
 			isa = PBXGroup;
 			children = (
+				95393C5F24A2C52E00FF92F0 /* Recursion.swift */,
 			);
 			path = Recursion;
+			sourceTree = "<group>";
+		};
+		95393C5C24A2C21500FF92F0 /* Utis */ = {
+			isa = PBXGroup;
+			children = (
+				95393C5D24A2C22700FF92F0 /* String+DPStringTool.swift */,
+			);
+			path = Utis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */,
 				95393C5324A26EFF00FF92F0 /* main.swift in Sources */,
+				95393C5E24A2C22700FF92F0 /* String+DPStringTool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
