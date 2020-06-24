@@ -8,5 +8,6 @@
 
 import Foundation
 
-reverseLines(0)
+//reverseLines(0)
+print(evaluateExpression("2+(2*1)+2"))
 
