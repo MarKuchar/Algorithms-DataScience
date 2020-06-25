@@ -41,38 +41,31 @@ func indexHelper(_ expression: String) -> String {
     return "None"
 }
 
-var i = 1;
-
 func evaluateExpression (_ expression: String, _ padding: String = "") -> Int {
 //    let operators = CharacterSet.init(charactersIn: "+-/*")
     print(padding, #function)
-
     if expression.count == 0 {
         return 0
-    } else if expression[0] == ")", expression.count == 1 {
-        return 0
+    } else if expression[0] == ")" {
+        return evaluateExpression(expression[1,expression.count])
     } else if expression[0] == "(" {
-        let valueLeft = evaluateExpression(expression[1, 2], padding + " ")
-        print("Left Value:",valueLeft)
-        print("Right Value:", expression[3, expression.count])
-        let valueRight = evaluateExpression(expression[3, expression.count], padding + " ")
-        print("Right Value:", valueRight)
-        let funcOperator = expression[2]
-        return operatorFunction(valueLeft, valueRight, funcOperator)!
-        
-    } else if let valueLeft = Int(expression[0]) {
-        print(valueLeft)
-        if expression.count > 1, expression[1] != ")" {
-            print(valueLeft, " ", expression[1], " ", expression[2, expression.count])
-            i += 2
-            if let result = operatorFunction(valueLeft, evaluateExpression(expression[i-1, expression.count], padding + " "), expression[i-2]) {
-                print("= ", result)
+        if expression[1] == "(" {
+            return evaluateExpression(expression[1,expression.count])
+        } else if let valueRight = Int(expression[3]) {
+            let valueLeft = operatorFunction(Int(expression[1]), valueRight, expression[2])!
+            print(expression[4,expression.count])
+            print(expression[5])
+            if let result = operatorFunction(valueLeft, evaluateExpression(expression[6,expression.count]), expression[5]) {
                 return result
             }
-        } else  {
-            i += 2
             return valueLeft
+        } else {
+            let valueLeft = evaluateExpression(expression[1], padding + " ")
+            let valueRight = evaluateExpression(expression[3, expression.count], padding + " ")
+            return operatorFunction(valueLeft, valueRight, expression[2])!
         }
+    } else if var valueLeft = Int(expression[0]) {
+        return valueLeft
     }
 
     return 0

@@ -11,7 +11,7 @@ import Foundation
 //reverseLines(0)
 //print(evaluateExpression("8+(3*1)+2)+2"))
 //print(evaluateExpression("(8+3)*(1+2)"))
-print(evaluateExpression("(5+(2+4))"))
+print(evaluateExpression("(1+(2*4))"))
 //print(evaluateExpression("8"))
 //print(evaluateExpression(""))
 //print(evaluateExpression("s"))
