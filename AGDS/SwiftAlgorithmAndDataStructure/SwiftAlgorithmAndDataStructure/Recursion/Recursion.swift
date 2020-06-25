@@ -18,8 +18,8 @@ func reverseLines (_ line: Int) {
     print("\(lines[line])")
 }
 
-func operatorFunction (_ leftValue: Int?, _ rightValue: Int?, _ oper: String) -> Int? {
-    if let rightValue = rightValue, let leftValue = leftValue {
+func operatorFunction (_ leftValue: Int?, _ rightValue: Int?, _ oper: String?) -> Int? {
+    if let rightValue = rightValue, let leftValue = leftValue, let oper = oper {
         if oper == "+" {
             return leftValue + rightValue
         } else if oper == "-" {
@@ -31,6 +31,8 @@ func operatorFunction (_ leftValue: Int?, _ rightValue: Int?, _ oper: String) ->
         } else {
             return nil
         }
+    } else if let leftValue = leftValue {
+        return leftValue
     }
     return nil
 }
@@ -39,32 +41,37 @@ func indexHelper(_ expression: String) -> String {
     return "None"
 }
 
-func evaluateExpression (_ expression: String) -> Int {
+var i = 1;
+
+func evaluateExpression (_ expression: String, _ padding: String = "") -> Int {
 //    let operators = CharacterSet.init(charactersIn: "+-/*")
+    print(padding, #function)
+
     if expression.count == 0 {
         return 0
-    }
-    if let value = Int(expression) {
-        return value
+    } else if expression[0] == ")", expression.count == 1 {
+        return 0
     } else if expression[0] == "(" {
-        if let indexOpenning = expression[1, expression.count].firstIndex(of: "("), let indexClosing = expression.firstIndex(of: ")") {
-            if indexOpenning < indexClosing {
-                
-                let substringOuter = expression[...indexOpenning]
-                let evalStringOuter = String(substringOuter)
-                
-                let partLeft = evaluateExpression(evalStringOuter[1, evalStringOuter.count])
-                if let value = operatorFunction(partLeft, evaluateExpression(expression[1, expression.count]), expression[2]) {
-                    return value
-                }
-            }
-        } else if let value = operatorFunction(evaluateExpression(expression[1, 4]), evaluateExpression(expression[6, expression.count]), expression[5]) {
-            return value
-        }
-        return evaluateExpression(expression[1, expression.count])
+        let valueLeft = evaluateExpression(expression[1, 2], padding + " ")
+        print("Left Value:",valueLeft)
+        print("Right Value:", expression[3, expression.count])
+        let valueRight = evaluateExpression(expression[3, expression.count], padding + " ")
+        print("Right Value:", valueRight)
+        let funcOperator = expression[2]
+        return operatorFunction(valueLeft, valueRight, funcOperator)!
+        
     } else if let valueLeft = Int(expression[0]) {
-        if let result = operatorFunction(valueLeft, evaluateExpression(expression[2, expression.count]), expression[1]) {
-            return result
+        print(valueLeft)
+        if expression.count > 1, expression[1] != ")" {
+            print(valueLeft, " ", expression[1], " ", expression[2, expression.count])
+            i += 2
+            if let result = operatorFunction(valueLeft, evaluateExpression(expression[i-1, expression.count], padding + " "), expression[i-2]) {
+                print("= ", result)
+                return result
+            }
+        } else  {
+            i += 2
+            return valueLeft
         }
     }
 
