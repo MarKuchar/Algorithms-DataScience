@@ -41,9 +41,8 @@ func indexHelper(_ expression: String) -> String {
     return "None"
 }
 
-func evaluateExpression (_ expression: String, _ padding: String = "") -> Int {
+func evaluateExpression (_ expression: String) -> Int {
 //    let operators = CharacterSet.init(charactersIn: "+-/*")
-    print(padding, #function)
     if expression.count == 0 {
         return 0
     } else if expression[0] == ")" {
@@ -53,18 +52,16 @@ func evaluateExpression (_ expression: String, _ padding: String = "") -> Int {
             return evaluateExpression(expression[1,expression.count])
         } else if let valueRight = Int(expression[3]) {
             let valueLeft = operatorFunction(Int(expression[1]), valueRight, expression[2])!
-            print(expression[4,expression.count])
-            print(expression[5])
             if let result = operatorFunction(valueLeft, evaluateExpression(expression[6,expression.count]), expression[5]) {
                 return result
             }
             return valueLeft
         } else {
-            let valueLeft = evaluateExpression(expression[1], padding + " ")
-            let valueRight = evaluateExpression(expression[3, expression.count], padding + " ")
+            let valueLeft = evaluateExpression(expression[1])
+            let valueRight = evaluateExpression(expression[3, expression.count])
             return operatorFunction(valueLeft, valueRight, expression[2])!
         }
-    } else if var valueLeft = Int(expression[0]) {
+    } else if let valueLeft = Int(expression[0]) {
         return valueLeft
     }
 
