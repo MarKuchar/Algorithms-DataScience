@@ -8,16 +8,10 @@
 
 import Foundation
 
-//reverseLines(0)
-//print(evaluateExpression("((8+3)*(1+2))"))
-//print(evaluateExpression("(1+(2*4))"))
-//print(evaluateExpression("8"))
-//print(evaluateExpression(""))
-//print(evaluateExpression("s"))
-
-
-
+/// Evaluate expression lab
+print(evaluateExpression("((8+3)*(1+2))"))
 //
+/// *** Print decimal ***
 //func printDecimal(_ n: Int, _ prefix: String) {
 //    if n == 0 {
 //        print(prefix)
@@ -27,3 +21,15 @@ import Foundation
 //        }
 //    }
 //}
+//
+/// *** Roll dice lab ***
+//func rollDiceSum(n: Int, sum: Int) {
+//    var choice = [Int]()
+//}
+
+//func rollDiceSumHelper(_ n: Int, _ sum: Int, _ choice: inout [Int]) {
+//    if choice.count == n {
+//
+//    }
+//}
+

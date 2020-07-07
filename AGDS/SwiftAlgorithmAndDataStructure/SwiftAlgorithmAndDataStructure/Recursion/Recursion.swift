@@ -37,9 +37,6 @@ func operatorFunction (_ leftValue: Int?, _ rightValue: Int?, _ oper: String?) -
     return nil
 }
 
-func indexHelper(_ expression: String) -> String {
-    return "None"
-}
 
 func evaluateExpression (_ expression: String) -> Int {
 //    let operators = CharacterSet.init(charactersIn: "+-/*")
