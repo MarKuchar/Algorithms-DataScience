@@ -9,7 +9,7 @@
 import Foundation
 
 
-var arr: [Int] = [0, 3, 2, 5, 1, 4, 8]
+var arr: [Int] = [8, 5, 4, 3, 1, 4, 5]
 
 quickSort(&arr, 0, arr.count, >)
 print(arr)
