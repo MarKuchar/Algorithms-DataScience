@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Board: CustomStringConvertible {
+struct Board: CustomStringConvertible, Hashable {
 	private var board: [[String]]
 	let size: Int
 	
@@ -64,4 +64,8 @@ struct Board: CustomStringConvertible {
 			return acc + pretty + "\n"
 		})
 	}
+    
+    static func == (_ lhs: Board, _ rhs: Board) -> Bool {
+        return lhs.board == rhs.board
+    }
 }

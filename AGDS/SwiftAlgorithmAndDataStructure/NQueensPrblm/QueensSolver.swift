@@ -17,7 +17,7 @@ import Foundation
 
 var count = 0
 
-func solveQueens(board: inout Board, _ column: inout Int) -> Bool {
+func solveQueensNumOfCalls(board: inout Board, _ column: inout Int) -> Bool {
     if column == board.size {
         return true
     }
@@ -28,8 +28,31 @@ func solveQueens(board: inout Board, _ column: inout Int) -> Bool {
         if board.isSafe(row: row, col: column) {
             board.place(row: row, col: column)
             column += 1
-            if solveQueens(board: &board, &column) {
+            if solveQueensNumOfCalls(board: &board, &column) {
                 print(board)
+            } else {
+                column -= 1
+                board.remove(row: row, col: column)
+            }
+         }
+        row += 1
+    }
+    return false
+}
+
+func solveQueensAllPossibilities(board: inout Board, _ column: inout Int, _ possibilities: inout Set<Board>) -> Bool {
+    if column == board.size {
+        return true
+    }
+    
+    var row = 0
+    while row < board.size {
+        if board.isSafe(row: row, col: column) {
+            board.place(row: row, col: column)
+            column += 1
+            if solveQueensAllPossibilities(board: &board, &column, &possibilities), !possibilities.contains(board) {
+                possibilities.insert(board)
+                count += 1
             } else {
                 column -= 1
                 board.remove(row: row, col: column)
