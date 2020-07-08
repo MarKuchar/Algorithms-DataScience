@@ -8,5 +8,7 @@
 
 import Foundation
 
-print("Hello, World!")
 
+var board = Board(size: 8)
+var column = 0
+solveQueens(board: &board, &column)
