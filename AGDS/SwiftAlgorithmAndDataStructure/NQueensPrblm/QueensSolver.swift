@@ -17,9 +17,9 @@ import Foundation
 
 var count = 0
 
-func solveQueens(board: inout Board, _ column: inout Int) {
+func solveQueens(board: inout Board, _ column: inout Int) -> Bool {
     if column == board.size {
-        column = 0
+        return true
     }
 	count += 1
     
@@ -28,10 +28,14 @@ func solveQueens(board: inout Board, _ column: inout Int) {
         if board.isSafe(row: row, col: column) {
             board.place(row: row, col: column)
             column += 1
-            solveQueens(board: &board, &column)
-            break
+            if solveQueens(board: &board, &column) {
+                print(board)
+            } else {
+                column -= 1
+                board.remove(row: row, col: column)
+            }
          }
         row += 1
     }
-    print(board)
+    return false
 }
