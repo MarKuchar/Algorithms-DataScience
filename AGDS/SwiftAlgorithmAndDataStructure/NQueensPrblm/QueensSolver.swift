@@ -40,23 +40,24 @@ func solveQueensNumOfCalls(board: inout Board, _ column: inout Int) -> Bool {
     return false
 }
 
+
 func solveQueensAllPossibilities(board: inout Board, _ column: inout Int, _ possibilities: inout Set<Board>) -> Bool {
     if column == board.size {
+        possibilities.insert(board)
         return true
     }
     
     var row = 0
+    
     while row < board.size {
         if board.isSafe(row: row, col: column) {
             board.place(row: row, col: column)
             column += 1
-            if solveQueensAllPossibilities(board: &board, &column, &possibilities), !possibilities.contains(board) {
-                possibilities.insert(board)
+            if solveQueensAllPossibilities(board: &board, &column, &possibilities) {
                 count += 1
-            } else {
-                column -= 1
-                board.remove(row: row, col: column)
             }
+            column -= 1
+            board.remove(row: row, col: column)
          }
         row += 1
     }
