@@ -17,9 +17,9 @@ var column = 0
 var possibilities = Set<Board>()
 solveQueensAllPossibilities(board: &board, &column, &possibilities)
 print(possibilities)
-print(possibilities.count)
+print("There is a ", possibilities.count, " possible ways\n")
 
 // Part two - count number of recursive calls
-//if !solveQueensNumOfCalls(board: &board, &column) {
-//    print("Number of recursive calls: ",count)
-//}
+if !solveQueensNumOfCalls(board: &board, &column) {
+    print("Number of recursive calls: ",count)
+}

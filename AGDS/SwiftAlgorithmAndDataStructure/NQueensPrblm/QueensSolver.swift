@@ -41,10 +41,9 @@ func solveQueensNumOfCalls(board: inout Board, _ column: inout Int) -> Bool {
 }
 
 
-func solveQueensAllPossibilities(board: inout Board, _ column: inout Int, _ possibilities: inout Set<Board>) -> Bool {
+func solveQueensAllPossibilities(board: inout Board, _ column: inout Int, _ possibilities: inout Set<Board>) {
     if column == board.size {
         possibilities.insert(board)
-        return true
     }
     
     var row = 0
@@ -53,13 +52,10 @@ func solveQueensAllPossibilities(board: inout Board, _ column: inout Int, _ poss
         if board.isSafe(row: row, col: column) {
             board.place(row: row, col: column)
             column += 1
-            if solveQueensAllPossibilities(board: &board, &column, &possibilities) {
-                count += 1
-            }
+            solveQueensAllPossibilities(board: &board, &column, &possibilities)
             column -= 1
             board.remove(row: row, col: column)
          }
         row += 1
     }
-    return false
 }
