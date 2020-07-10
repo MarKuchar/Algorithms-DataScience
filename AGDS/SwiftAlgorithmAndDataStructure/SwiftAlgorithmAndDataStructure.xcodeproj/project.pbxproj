@@ -13,6 +13,7 @@
 		9563BDD624B54AA100ADBB31 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563BDD524B54AA100ADBB31 /* main.swift */; };
 		9563BDE124B54B1C00ADBB31 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563BDDF24B54B1C00ADBB31 /* Board.swift */; };
 		9577593124B7D09D00B1C98C /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
+		9577593324B7F1F000B1C98C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593224B7F1F000B1C98C /* Stack.swift */; };
 		9592482B24B4183E000B22AE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9592482A24B4183E000B22AE /* main.swift */; };
 		95D8C75024B68D4D00D049A8 /* QueensSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8C74F24B68D4D00D049A8 /* QueensSolver.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		9563BDD524B54AA100ADBB31 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9563BDDF24B54B1C00ADBB31 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		9577593024B7D09D00B1C98C /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		9577593224B7F1F000B1C98C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		9592482824B4183E000B22AE /* Sorting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sorting; sourceTree = BUILT_PRODUCTS_DIR; };
 		9592482A24B4183E000B22AE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95D8C74F24B68D4D00D049A8 /* QueensSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueensSolver.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				9577593024B7D09D00B1C98C /* Queue.swift */,
+				9577593224B7F1F000B1C98C /* Stack.swift */,
 			);
 			path = CustomDataStructures;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */,
+				9577593324B7F1F000B1C98C /* Stack.swift in Sources */,
 				95393C5324A26EFF00FF92F0 /* main.swift in Sources */,
 				95393C5E24A2C22700FF92F0 /* String+DPStringTool.swift in Sources */,
 				9577593124B7D09D00B1C98C /* Queue.swift in Sources */,

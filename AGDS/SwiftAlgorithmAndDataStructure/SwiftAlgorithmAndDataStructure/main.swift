@@ -8,8 +8,23 @@
 
 import Foundation
 
+
+var myQueue = Queue<Int>()
+myQueue.enqueue(item: 8)
+myQueue.enqueue(item: 3)
+myQueue.enqueue(item: 5)
+myQueue.enqueue(item: 6)
+myQueue.enqueue(item: 7)
+
+print(myQueue.dequeue()!)
+
+
+
+
+
+
 /// Evaluate expression lab
-print(evaluateExpression("((8+3)*(1+2))"))
+//print(evaluateExpression("((8+3)*(1+2))"))
 //
 /// *** Print decimal ***
 //func printDecimal(_ n: Int, _ prefix: String) {
