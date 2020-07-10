@@ -42,14 +42,15 @@ public final class Queue<E> : Sequence {
     }
     
     public func dequeue() -> E? {
-        if count == 0 {
-            return nil
+        let toRemove = tail?.item
+        if count == 1 {
+            head = nil
+            return toRemove
         }
         var current = head
         while current?.next?.next != nil {
             current = current?.next
         }
-        let toRemove = tail?.item
         tail = current
         tail?.next = nil
         count -= 1

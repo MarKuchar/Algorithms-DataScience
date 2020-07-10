@@ -25,7 +25,27 @@ public final class Stack<E> : Sequence {
     public init() { }
     
     public func push(item: E) {
-        
+        let oldHead = head
+        head = Node(item, oldHead)
+        count += 1
+    }
+    
+    public func pop() -> E? {
+        if let toRemove = head {
+            head = nil
+            head = toRemove.next
+            count -= 1
+            return toRemove.item
+        }
+        return nil
+    }
+    
+    public func peek() -> E? {
+        return head?.item
+    }
+    
+    public func isEmpty() -> Bool {
+        return count == 0
     }
     
     public class StackIterator<E> : IteratorProtocol {

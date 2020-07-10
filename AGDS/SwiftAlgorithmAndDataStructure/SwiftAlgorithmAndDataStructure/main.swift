@@ -10,12 +10,12 @@ import Foundation
 
 
 var myQueue = Queue<Int>()
-
+var myStack = Stack<Int>()
 
 /// Evaluate expression lab
 //print(evaluateExpression("((8+3)*(1+2))"))
 //
-/// *** Print decimal ***
+/// ** Print decimal **
 //func printDecimal(_ n: Int, _ prefix: String) {
 //    if n == 0 {
 //        print(prefix)
