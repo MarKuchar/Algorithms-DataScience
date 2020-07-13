@@ -33,36 +33,30 @@ public final class Queue<E> : Sequence {
     }
     
     public func enqueue(item: E) {
-        let oldFirst = head
-        if count == 0 {
-            self.tail = Node<E>(item)
+        let oldLast = tail
+        self.tail = Node<E>(item)
+        if isEmpty() {
+            self.head = tail
+        } else {
+            oldLast?.next = tail
         }
-        self.head = Node<E>(item, oldFirst)
         count += 1
     }
     
     public func dequeue() -> E? {
-        let toRemove = tail?.item
-        if count == 1 {
-            head = nil
-            return toRemove
+        if let item = head?.item {
+            head = head?.next
+            count -= 1
+            if isEmpty() {
+                tail = nil
+            }
+            return item
         }
-        var current = head
-        while current?.next?.next != nil {
-            current = current?.next
-        }
-        tail = current
-        tail?.next = nil
-        count -= 1
-        return toRemove
+        return nil
     }
     
     public func peek() -> E? {
-        var current = head
-        while current?.next != nil {
-           current = current?.next
-        }
-        return current?.item
+        return head?.item
     }
     
     public struct QueueIterator<E> : IteratorProtocol {
