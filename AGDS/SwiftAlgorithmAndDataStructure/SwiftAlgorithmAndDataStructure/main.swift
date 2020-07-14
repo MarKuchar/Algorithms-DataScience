@@ -8,9 +8,12 @@
 
 import Foundation
 
+findElements(numberOfItems: 5, numberOfElements: 5)
 
-var myQueue = Queue<Int>()
-var myStack = Stack<Int>()
+
+/// **Custom collections**
+//var myQueue = Queue<Int>()
+//var myStack = Stack<Int>()
 
 /// Evaluate expression lab
 //print(evaluateExpression("((8+3)*(1+2))"))
