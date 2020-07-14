@@ -8,7 +8,7 @@
 
 import Foundation
 
-findElements(numberOfItems: 5, numberOfElements: 5)
+findElements(numberOfItems: 5, numberOfElements: 4)
 
 
 /// **Custom collections**
