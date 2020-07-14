@@ -17,6 +17,7 @@
 		9577593124B7D09D00B1C98C /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
 		9577593324B7F1F000B1C98C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593224B7F1F000B1C98C /* Stack.swift */; };
 		9592482B24B4183E000B22AE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9592482A24B4183E000B22AE /* main.swift */; };
+		95CB5E6924BD327A00CEA584 /* GroupPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB5E6824BD327A00CEA584 /* GroupPresentation.swift */; };
 		95D8C75024B68D4D00D049A8 /* QueensSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8C74F24B68D4D00D049A8 /* QueensSolver.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		9577593224B7F1F000B1C98C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		9592482824B4183E000B22AE /* Sorting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sorting; sourceTree = BUILT_PRODUCTS_DIR; };
 		9592482A24B4183E000B22AE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		95CB5E6824BD327A00CEA584 /* GroupPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPresentation.swift; sourceTree = "<group>"; };
 		95D8C74F24B68D4D00D049A8 /* QueensSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueensSolver.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,6 +118,7 @@
 		95393C5124A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				95CB5E6724BD324A00CEA584 /* AlgorithmExercise */,
 				954C959D24B8CEEA0079D41B /* Tree */,
 				9577592F24B7CE3C00B1C98C /* CustomDataStructures */,
 				95393C5C24A2C21500FF92F0 /* Utis */,
@@ -176,6 +179,14 @@
 				9592482A24B4183E000B22AE /* main.swift */,
 			);
 			path = Sorting;
+			sourceTree = "<group>";
+		};
+		95CB5E6724BD324A00CEA584 /* AlgorithmExercise */ = {
+			isa = PBXGroup;
+			children = (
+				95CB5E6824BD327A00CEA584 /* GroupPresentation.swift */,
+			);
+			path = AlgorithmExercise;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -281,6 +292,7 @@
 				95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */,
 				9577593324B7F1F000B1C98C /* Stack.swift in Sources */,
 				954C95A124BA705A0079D41B /* Bag.swift in Sources */,
+				95CB5E6924BD327A00CEA584 /* GroupPresentation.swift in Sources */,
 				95393C5324A26EFF00FF92F0 /* main.swift in Sources */,
 				954C959F24B8CEFA0079D41B /* Tree.swift in Sources */,
 				95393C5E24A2C22700FF92F0 /* String+DPStringTool.swift in Sources */,
