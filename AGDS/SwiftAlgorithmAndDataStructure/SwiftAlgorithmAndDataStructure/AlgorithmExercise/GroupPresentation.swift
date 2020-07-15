@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// Attempt to use binary search, unsuccessfully because of insertion causes shifting and increase time complexity
+
 //func findElementsSort(numberOfItems n: Int, numberOfElements m: Int) -> [Int] {
 //    var arrayOfElements = [Int]()
 //    for _ in 0...n-1 {
@@ -63,10 +65,10 @@ func addElement(_ e: Int ,_ array: inout [Int], _ m: Int) {
     if array.count < m {
         array.append(e)
     }
-    organizeAfterAddition(e, indexOfE, &array, <)
+    organizeAfterAddition(e, indexOfE, m, &array, <)
 }
 
-func organizeAfterAddition(_ e: Int, _ indexOfE: Int, _ array: inout [Int], _ comparator: (Int, Int) -> Bool) {
+func organizeAfterAddition(_ e: Int, _ indexOfE: Int, _ numberOfElements: Int, _ array: inout [Int], _ comparator: (Int, Int) -> Bool) {
     if indexOfE == 0 { return }
     var index = indexOfE / 2
     if !isLeftChild(indexOfE) {
@@ -75,16 +77,48 @@ func organizeAfterAddition(_ e: Int, _ indexOfE: Int, _ array: inout [Int], _ co
     
     let temp = array[index]
     
-    if indexOfE < 4 {
+    if indexOfE < numberOfElements {
         if (comparator(e, array[index])) { return }
         array[index] = e
         array[indexOfE] = temp
+        organizeAfterAddition(e, index, numberOfElements, &array, comparator)
     }
-    
-    organizeAfterAddition(e, index, &array, comparator)
+    if comparator(e, array[0]) {
+        array[0] = e
+        organizeAfterDeletion(0, &array)
+    }
 }
 
 func isLeftChild(_ i: Int) -> Bool {
     return i % 2 == 1
+}
+
+func organizeAfterDeletion(_ i: Int, _ array: inout [Int]){
+    if i >= array.count {
+        return
+    }
+    if 2 * i + 2 >= array.count {
+        if array[2 * i + 1] > array[2 * i + 2] {
+            if array[i] < array[2 * i + 1] {
+                let temp = array[2 * i + 1]
+                array[2 * i + 1] = array[i]
+                array[i] = temp
+                organizeAfterDeletion((2 * i + 1), &array)
+            }
+        } else {
+            if array[i] < array[2 * i + 2] {
+                let temp = array[2 * i + 2]
+                array[2 * i + 2] = array[i]
+                array[i] = temp
+                organizeAfterDeletion((2 * i + 2), &array)
+            }
+        }
+    }
+    if array[i] < array[2 * i + 1] {
+        let temp = array[2 * i + 1]
+        array[2 * i + 1] = array[i]
+        array[i] = temp
+    }
+    
 }
 
