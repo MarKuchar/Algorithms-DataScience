@@ -54,18 +54,14 @@ func findElements(numberOfItems n: Int, numberOfElements m: Int) -> [Int] {
     var arrayOfElements = [Int]()
     for _ in 0...n-1 {
         let input = Int(readLine()!)!
-        addElement(input, &arrayOfElements, m)
+        let indexOfE = arrayOfElements.count
+        if arrayOfElements.count < m {
+            arrayOfElements.append(input)
+        }
+        organizeAfterAddition(input, indexOfE, m, &arrayOfElements, <)
     }
     print(arrayOfElements)
     return arrayOfElements
-}
-
-func addElement(_ e: Int ,_ array: inout [Int], _ m: Int) {
-    let indexOfE = array.count
-    if array.count < m {
-        array.append(e)
-    }
-    organizeAfterAddition(e, indexOfE, m, &array, <)
 }
 
 func organizeAfterAddition(_ e: Int, _ indexOfE: Int, _ numberOfElements: Int, _ array: inout [Int], _ comparator: (Int, Int) -> Bool) {
@@ -94,31 +90,22 @@ func isLeftChild(_ i: Int) -> Bool {
 }
 
 func organizeAfterDeletion(_ i: Int, _ array: inout [Int]){
-    if i >= array.count {
+    if 2 * i + 1 >= array.count {
         return
     }
-    if 2 * i + 2 >= array.count {
-        if array[2 * i + 1] > array[2 * i + 2] {
-            if array[i] < array[2 * i + 1] {
-                let temp = array[2 * i + 1]
-                array[2 * i + 1] = array[i]
-                array[i] = temp
-                organizeAfterDeletion((2 * i + 1), &array)
-            }
-        } else {
-            if array[i] < array[2 * i + 2] {
-                let temp = array[2 * i + 2]
-                array[2 * i + 2] = array[i]
-                array[i] = temp
-                organizeAfterDeletion((2 * i + 2), &array)
-            }
+    if 2 * i + 2 < array.count {
+        if array[2 * i + 2] > array[2 * i + 1] && array[i] < array[2 * i + 2] {
+            let temp = array[2 * i + 2]
+            array[2 * i + 2] = array[i]
+            array[i] = temp
+            organizeAfterDeletion((2 * i + 2), &array)
         }
     }
     if array[i] < array[2 * i + 1] {
         let temp = array[2 * i + 1]
         array[2 * i + 1] = array[i]
         array[i] = temp
+        organizeAfterDeletion((2 * i + 1), &array)
     }
-    
 }
 

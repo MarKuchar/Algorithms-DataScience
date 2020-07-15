@@ -126,8 +126,8 @@
             filePath = "SwiftAlgorithmAndDataStructure/AlgorithmExercise/GroupPresentation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "findElements(numberOfItems:numberOfElements:)"
             landmarkType = "9">
          </BreakpointContent>
@@ -136,14 +136,14 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5BC904CD-4CA7-4270-B930-836189F767D3"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SwiftAlgorithmAndDataStructure/AlgorithmExercise/GroupPresentation.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "organizeAfterAddition(_:_:_:_:_:)"
             landmarkType = "9">
          </BreakpointContent>

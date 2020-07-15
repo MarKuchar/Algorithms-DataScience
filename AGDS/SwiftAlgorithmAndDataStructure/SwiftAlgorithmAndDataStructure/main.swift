@@ -8,7 +8,7 @@
 
 import Foundation
 
-findElements(numberOfItems: 7, numberOfElements: 4)
+findElements(numberOfItems: 10, numberOfElements: 3)
 //findElementsSort(numberOfItems: 10, numberOfElements: 4)
 
 
