@@ -30,3 +30,23 @@ func printParent() {
         print(parents[i])
     }
 }
+
+
+func diameter() {
+    let numberOfNodes = Int(readLine()!)!
+    var nodes = [[(Int, Int)]](repeating: [], count: numberOfNodes)
+    
+    for _ in 0...numberOfNodes-1 {
+        let edges = readLine()!.split(separator: " ")
+        let nodeA = Int(edges[0])!
+        var i = 1
+        var j = 0
+        while Int(edges[i])! != -1 {
+            let nodeB = Int(edges[i])!
+            let distance = Int(edges[i+1])!
+            nodes[nodeA-1][j] = (nodeB, distance)
+            j += 1
+            i += 2
+        }
+    }
+}
