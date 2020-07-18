@@ -44,9 +44,11 @@ func diameter() {
         while Int(edges[i])! != -1 {
             let nodeB = Int(edges[i])!
             let distance = Int(edges[i+1])!
-            nodes[nodeA-1][j] = (nodeB, distance)
+            let pair: (Int, Int) = (nodeB, distance)
+            nodes[nodeA-1].append(pair)
             j += 1
             i += 2
         }
     }
+    print(nodes)
 }

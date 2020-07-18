@@ -8,5 +8,6 @@
 
 import Foundation
 
-printParent()
+//printParent()
+diameter()
 
