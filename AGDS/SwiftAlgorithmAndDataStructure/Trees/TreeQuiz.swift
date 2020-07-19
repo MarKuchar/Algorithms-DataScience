@@ -51,7 +51,6 @@ func diameter() {
         }
     }
     
-    var isVisited = [Bool](repeating: false, count: numberOfNodes)
     
     func findMaxDiameter(_ node: Int, _ isVisited: inout [Bool]) -> Int {
         var currentDiameter = 0
@@ -70,7 +69,15 @@ func diameter() {
         }
         return currentDiameter
     }
-    var maxDiameter = findMaxDiameter(0, &isVisited)
+    
+    var maxDiameter = 0
+    for i in 0...numberOfNodes-1 {
+        var isVisited = [Bool](repeating: false, count: numberOfNodes)
+        let a = findMaxDiameter(i, &isVisited)
+        if a > maxDiameter {
+            maxDiameter = a
+        }
+    }
     print(nodes)
     print(maxDiameter)
 }
