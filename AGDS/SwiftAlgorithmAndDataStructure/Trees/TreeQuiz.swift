@@ -60,7 +60,10 @@ func diameter() {
         }
         isVisited[node] = true
         for tupple in nodes[node] {
-            let diameter = tupple.1 + findMaxDiameter(tupple.0 - 1 , &isVisited)
+            if isVisited[tupple.0 - 1] == true {
+                continue
+            }
+            var diameter = tupple.1 + findMaxDiameter(tupple.0 - 1 , &isVisited)
             if currentDiameter < diameter {
                 currentDiameter = diameter
             }
