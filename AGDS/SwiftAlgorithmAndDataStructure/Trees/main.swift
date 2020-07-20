@@ -9,5 +9,8 @@
 import Foundation
 
 //printParent()
-diameter()
+//diameter()
+
+lowestCommonAncestor()
+
 
