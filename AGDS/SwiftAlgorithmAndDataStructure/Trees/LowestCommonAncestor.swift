@@ -11,24 +11,29 @@ import Foundation
 func commonAncestor() {
     struct Vertex {
         var parent: Int?
+        var depth: Int?
         var children: [Int]?
     }
     let numOfVertices = Int(readLine()!)!
     var treeVertices = [Vertex](repeating: Vertex(parent: nil, children: []), count: numOfVertices)
     treeVertices[0].parent = 0
+    treeVertices[0].depth = 0
     
     for _ in 0..<numOfVertices-1 {
         let edge = readLine()!.split(separator: " ")
         let vertexA = Int(edge[0])!
         let vertexB = Int(edge[1])!
-        if vertexA < vertexB {
+        if treeVertices[vertexA-1].parent != nil {
             treeVertices[vertexB-1].parent = vertexA
-            treeVertices[vertexA-1].children?.append(vertexB)
+//            treeVertices[vertexA-1].children?.append(vertexB)
         } else {
             treeVertices[vertexA-1].parent = vertexB
-            treeVertices[vertexB-1].children?.append(vertexA)
+//            treeVertices[vertexB-1].children?.append(vertexA)
         }
     }
+    
+    // set the depth of the vertices
+    
     
     let numberOfPairs = Int(readLine()!)!
     
@@ -61,4 +66,5 @@ func commonAncestor() {
         let vertexB = Int(edge[1])!
         print(lowestCommonAncestor(vertexA, vertexB, &treeVertices))
     }
+    print(treeVertices)
 }
