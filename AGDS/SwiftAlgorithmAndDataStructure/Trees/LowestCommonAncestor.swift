@@ -8,12 +8,11 @@
 
 import Foundation
 
-struct Vertex {
-    var parent: Int?
-    var children: [Int]?
-}
-
 func commonAncestor() {
+    struct Vertex {
+        var parent: Int?
+        var children: [Int]?
+    }
     let numOfVertices = Int(readLine()!)!
     var treeVertices = [Vertex](repeating: Vertex(parent: nil, children: []), count: numOfVertices)
     treeVertices[0].parent = 0
@@ -22,7 +21,7 @@ func commonAncestor() {
         let edge = readLine()!.split(separator: " ")
         let vertexA = Int(edge[0])!
         let vertexB = Int(edge[1])!
-        if treeVertices[vertexA-1].parent != nil {
+        if vertexA < vertexB {
             treeVertices[vertexB-1].parent = vertexA
             treeVertices[vertexA-1].children?.append(vertexB)
         } else {
@@ -32,30 +31,34 @@ func commonAncestor() {
     }
     
     let numberOfPairs = Int(readLine()!)!
-//    var pairLCA = [Int]()
     
-    func lowestCommonAncestor(_ vertexA: Vertex, _ vertexB: Vertex, _ treeVertices: inout [Vertex]) -> Int {
+    func lowestCommonAncestor(_ nodeA: Int, _ nodeB: Int, _ treeVertices: inout [Vertex]) -> Int {
         var parent = 0
-        if vertexA.parent == vertexB.parent {
-            return vertexA.parent!
-        } else if vertexA.parent! > vertexB.parent! {
-            parent = lowestCommonAncestor(treeVertices[vertexA.parent!-1], vertexB, &treeVertices)
+        guard let parentA = treeVertices[nodeA-1].parent else {
+            return nodeA
+        }
+        guard let parentB = treeVertices[nodeB-1].parent else {
+            return nodeB
+        }
+        if parentA == parentB {
+            return parentA
+        } else if parentA == nodeB {
+            return nodeB
+        } else if parentB == nodeA {
+            return nodeA
+        }
+        if parentA > parentB {
+            parent = lowestCommonAncestor(parentA, nodeB, &treeVertices)
         } else {
-            parent = lowestCommonAncestor(vertexA, treeVertices[vertexB.parent!-1], &treeVertices)
+            parent = lowestCommonAncestor(nodeA, parentB, &treeVertices)
         }
         return parent
     }
-    
+
     for _ in 0..<numberOfPairs {
         let edge = readLine()!.split(separator: " ")
-        let vertexA = treeVertices[Int(edge[0])!-1]
-        let vertexB = treeVertices[Int(edge[1])!-1]
-//        pairLCA.append(lowestCommonAncestor(vertexA, vertexB))
+        let vertexA = Int(edge[0])!
+        let vertexB = Int(edge[1])!
         print(lowestCommonAncestor(vertexA, vertexB, &treeVertices))
     }
-    
-    for i in treeVertices {
-     print(i)
-    }
-//    print(pairLCA)
 }
