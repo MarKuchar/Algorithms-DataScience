@@ -10,6 +10,7 @@
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
 		95393C5E24A2C22700FF92F0 /* String+DPStringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5D24A2C22700FF92F0 /* String+DPStringTool.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
+		953E585D24C7599D000C3E5B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
 		954C95A124BA705A0079D41B /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954C95A024BA705A0079D41B /* Bag.swift */; };
 		954D35D824C3034000505FF6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D35D724C3034000505FF6 /* main.swift */; };
 		954D35E524C303AC00505FF6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D35E424C303AC00505FF6 /* main.swift */; };
@@ -17,7 +18,6 @@
 		9560E59B24C64AFC00FE55B5 /* LowestCommonAncestor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9560E59A24C64AFC00FE55B5 /* LowestCommonAncestor.swift */; };
 		9563BDD624B54AA100ADBB31 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563BDD524B54AA100ADBB31 /* main.swift */; };
 		9563BDE124B54B1C00ADBB31 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563BDDF24B54B1C00ADBB31 /* Board.swift */; };
-		9577593124B7D09D00B1C98C /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
 		9577593324B7F1F000B1C98C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593224B7F1F000B1C98C /* Stack.swift */; };
 		9592482B24B4183E000B22AE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9592482A24B4183E000B22AE /* main.swift */; };
 		95CB5E6924BD327A00CEA584 /* GroupPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB5E6824BD327A00CEA584 /* GroupPresentation.swift */; };
@@ -201,6 +201,7 @@
 		954D35E324C303AC00505FF6 /* Trees */ = {
 			isa = PBXGroup;
 			children = (
+				9577593024B7D09D00B1C98C /* Queue.swift */,
 				954D35E424C303AC00505FF6 /* main.swift */,
 				954D35E924C303B600505FF6 /* TreeQuiz.swift */,
 				9560E59A24C64AFC00FE55B5 /* LowestCommonAncestor.swift */,
@@ -221,7 +222,6 @@
 		9577592F24B7CE3C00B1C98C /* CustomDataStructures */ = {
 			isa = PBXGroup;
 			children = (
-				9577593024B7D09D00B1C98C /* Queue.swift */,
 				9577593224B7F1F000B1C98C /* Stack.swift */,
 				954C95A024BA705A0079D41B /* Bag.swift */,
 				95CB5E6A24BD4B6400CEA584 /* PriorityQueue.swift */,
@@ -394,7 +394,6 @@
 				95393C5324A26EFF00FF92F0 /* main.swift in Sources */,
 				95CB5E6B24BD4B6400CEA584 /* PriorityQueue.swift in Sources */,
 				95393C5E24A2C22700FF92F0 /* String+DPStringTool.swift in Sources */,
-				9577593124B7D09D00B1C98C /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,6 +412,7 @@
 				954D35EA24C303B600505FF6 /* TreeQuiz.swift in Sources */,
 				954D35E524C303AC00505FF6 /* main.swift in Sources */,
 				9560E59B24C64AFC00FE55B5 /* LowestCommonAncestor.swift in Sources */,
+				953E585D24C7599D000C3E5B /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

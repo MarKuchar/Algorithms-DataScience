@@ -12,59 +12,57 @@ func commonAncestor() {
     struct Vertex {
         var parent: Int?
         var depth: Int?
-        var children: [Int]?
+        var to: [Int]?
     }
     let numOfVertices = Int(readLine()!)!
-    var treeVertices = [Vertex](repeating: Vertex(parent: nil, children: []), count: numOfVertices)
-    treeVertices[0].parent = 0
+    var treeVertices = [Vertex](repeating: Vertex(parent: nil, to: []), count: numOfVertices)
     treeVertices[0].depth = 0
     
     for _ in 0..<numOfVertices-1 {
         let edge = readLine()!.split(separator: " ")
         let vertexA = Int(edge[0])!
         let vertexB = Int(edge[1])!
-        if treeVertices[vertexA-1].parent != nil {
-            treeVertices[vertexB-1].parent = vertexA
-//            treeVertices[vertexA-1].children?.append(vertexB)
-        } else {
-            treeVertices[vertexA-1].parent = vertexB
-//            treeVertices[vertexB-1].children?.append(vertexA)
-        }
+        treeVertices[vertexB-1].to?.append(vertexA)
+        treeVertices[vertexA-1].to?.append(vertexB)
     }
     
     // set the depth of the vertices
     
-    
-    let numberOfPairs = Int(readLine()!)!
-    
-    func lowestCommonAncestor(_ nodeA: Int, _ nodeB: Int, _ treeVertices: inout [Vertex]) -> Int {
-        var parent = 0
-        guard let parentA = treeVertices[nodeA-1].parent else {
-            return nodeA
+    let q = Queue<Int>()
+    var isVisited = [Bool](repeating: false, count: numOfVertices+1)
+    q.enqueue(item: 1)
+    isVisited[1] = true
+    while !q.isEmpty() {
+        let vertex = q.dequeue()!
+        isVisited[vertex] = true
+        if let connections = treeVertices[vertex-1].to {
+            for i in 0..<connections.count {
+                if !isVisited[connections[i]] {
+                    treeVertices[connections[i]-1].parent = vertex
+                    treeVertices[connections[i]-1].depth = treeVertices[vertex-1].depth! + 1
+                    q.enqueue(item: connections[i])
+                }
+            }
         }
-        guard let parentB = treeVertices[nodeB-1].parent else {
-            return nodeB
-        }
-        if parentA == parentB {
-            return parentA
-        } else if parentA == nodeB {
-            return nodeB
-        } else if parentB == nodeA {
-            return nodeA
-        }
-        if parentA > parentB {
-            parent = lowestCommonAncestor(parentA, nodeB, &treeVertices)
-        } else {
-            parent = lowestCommonAncestor(nodeA, parentB, &treeVertices)
-        }
-        return parent
     }
-
-    for _ in 0..<numberOfPairs {
+    
+    var numberOfPairs = Int(readLine()!)!
+    
+    while numberOfPairs > 0 {
         let edge = readLine()!.split(separator: " ")
-        let vertexA = Int(edge[0])!
-        let vertexB = Int(edge[1])!
-        print(lowestCommonAncestor(vertexA, vertexB, &treeVertices))
+        var vertexA = Int(edge[0])!
+        var vertexB = Int(edge[1])!
+        if treeVertices[vertexA-1].depth! < treeVertices[vertexB-1].depth! {
+            swap(&vertexA, &vertexB)
+        }
+        while treeVertices[vertexA-1].depth! != treeVertices[vertexB-1].depth! {
+            vertexA = treeVertices[vertexA-1].parent!
+        }
+        while vertexA != vertexB {
+            vertexA = treeVertices[vertexA-1].parent!
+            vertexB = treeVertices[vertexB-1].parent!
+        }
+        print(vertexA)
+        numberOfPairs -= 1
     }
-    print(treeVertices)
 }
