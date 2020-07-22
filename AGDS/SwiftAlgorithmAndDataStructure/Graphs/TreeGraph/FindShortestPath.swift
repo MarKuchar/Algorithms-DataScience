@@ -12,13 +12,15 @@ import Foundation
 
 func findShortestPath() {
     struct Restaurant {
-        let isReal: Bool
         var pathTo: Int
+        var time: Int
     }
     let allRestaurant = readLine()!.split(separator: " ").map { Int($0)! }
     let numOfAllRest = allRestaurant[0]
     let numOfRealRest = allRestaurant[1]
     var adjListOfRest = [[Int]](repeating: [], count: numOfAllRest)
+    var newArray = [Int]()
+    var arrayOfRealRest2 = [[(Int, Int)]](repeating: [], count: numOfAllRest)
     let arrayOfRealRest = readLine()!.split(separator: " ").map { Int($0)! }
     var isRealRest = [Bool](repeating: false, count: numOfAllRest)
     for rest in arrayOfRealRest {
@@ -35,6 +37,7 @@ func findShortestPath() {
     
     var startRest = Int()
     var isVisited = [Bool](repeating: false, count: numOfAllRest)
+    var isVisited2 = [Bool](repeating: false, count: numOfAllRest)
     
     func BFS(_ start: Int, _ isVisited: inout [Bool], _ adjListOfRest: inout [[Int]]) {
         let q = Queue<Int>()
@@ -54,7 +57,34 @@ func findShortestPath() {
         }
     }
     
+    func BFS2(_ start: Int, _ isVisited: inout [Bool], _ adjListOfRest: inout [[Int]]) {
+          var count = 0
+          newArray.append(start)
+          let q = Queue<Int>()
+          q.enqueue(item: start)
+          isVisited[start] = true
+          while !q.isEmpty() {
+              let r = q.dequeue()!
+              count += 1
+              for i in adjListOfRest[r] {
+                  if !isVisited[i] {
+                      if arrayOfRealRest.contains(i) && !newArray.contains(i) {
+                          arrayOfRealRest2[start].append((i, count))
+                          BFS2(i, &isVisited, &adjListOfRest)
+                          continue
+                      }
+                      q.enqueue(item: i)
+                      isVisited[i] = true
+                  }
+              }
+          }
+      }
+    
     BFS(0, &isVisited, &adjListOfRest)
+    BFS2(startRest, &isVisited2, &adjListOfRest)
     print(arrayOfRealRest)
     print(startRest)
+    print(newArray)
+    print(arrayOfRealRest)
+    print(arrayOfRealRest2)
 }
