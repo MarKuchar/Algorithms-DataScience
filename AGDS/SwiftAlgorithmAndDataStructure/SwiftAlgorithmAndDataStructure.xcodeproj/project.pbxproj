@@ -11,6 +11,7 @@
 		95393C5E24A2C22700FF92F0 /* String+DPStringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5D24A2C22700FF92F0 /* String+DPStringTool.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
 		953E585D24C7599D000C3E5B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
+		953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E585F24C7CB6E000C3E5B /* Permutation.swift */; };
 		954C95A124BA705A0079D41B /* Bag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954C95A024BA705A0079D41B /* Bag.swift */; };
 		954D35D824C3034000505FF6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D35D724C3034000505FF6 /* main.swift */; };
 		954D35E524C303AC00505FF6 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954D35E424C303AC00505FF6 /* main.swift */; };
@@ -79,6 +80,7 @@
 		95393C5D24A2C22700FF92F0 /* String+DPStringTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+DPStringTool.swift"; path = "../../../../Classes/Swift-AGDS/SwiftAGDS/Utils/String+DPStringTool.swift"; sourceTree = "<group>"; };
 		95393C5F24A2C52E00FF92F0 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
 		95393C6124A2C5B800FF92F0 /* story.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = story.txt; path = "../../../Classes/Swift-AGDS/SwiftAGDS/Recursion/story.txt"; sourceTree = "<group>"; };
+		953E585F24C7CB6E000C3E5B /* Permutation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Permutation.swift; sourceTree = "<group>"; };
 		954C95A024BA705A0079D41B /* Bag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bag.swift; sourceTree = "<group>"; };
 		954D35D524C3034000505FF6 /* Graphs */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Graphs; sourceTree = BUILT_PRODUCTS_DIR; };
 		954D35D724C3034000505FF6 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -190,9 +192,18 @@
 			path = Utis;
 			sourceTree = "<group>";
 		};
+		953E585E24C78C65000C3E5B /* Assignments */ = {
+			isa = PBXGroup;
+			children = (
+				953E585F24C7CB6E000C3E5B /* Permutation.swift */,
+			);
+			path = Assignments;
+			sourceTree = "<group>";
+		};
 		954D35D624C3034000505FF6 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
+				953E585E24C78C65000C3E5B /* Assignments */,
 				954D35D724C3034000505FF6 /* main.swift */,
 			);
 			path = Graphs;
@@ -401,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */,
 				954D35D824C3034000505FF6 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
