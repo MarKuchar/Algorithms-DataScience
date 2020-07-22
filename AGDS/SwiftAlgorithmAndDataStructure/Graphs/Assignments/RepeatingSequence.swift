@@ -21,9 +21,9 @@ func findRepeatingSequence() {
             let num = Int(pow(Double(digit[i])!, Double(power)!))
             sum += num
         }
-        if let start = sequence.lastIndex(of: sum) {
-            numOfInSequenceE = sequence.count - start - 1
-        } else {
+        if let start = sequence.firstIndex(of: sum) {
+            numOfInSequenceE = sequence.count - start 
+            break
         }
         sequence.append(sum)
         digit = String(sum)

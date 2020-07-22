@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331324C8AD5200287EE4 /* FindShortestPath.swift */; };
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
 		953E585D24C7599D000C3E5B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
@@ -76,6 +77,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9538331324C8AD5200287EE4 /* FindShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindShortestPath.swift; sourceTree = "<group>"; };
 		95393C4F24A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmAndDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		95393C5224A26EFF00FF92F0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95393C5F24A2C52E00FF92F0 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
@@ -141,6 +143,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9538331224C8AD3600287EE4 /* TreeGraph */ = {
+			isa = PBXGroup;
+			children = (
+				9538331324C8AD5200287EE4 /* FindShortestPath.swift */,
+			);
+			path = TreeGraph;
+			sourceTree = "<group>";
+		};
 		95393C4624A26EFF00FF92F0 = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +216,7 @@
 		954D35D624C3034000505FF6 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
+				9538331224C8AD3600287EE4 /* TreeGraph */,
 				953E585E24C78C65000C3E5B /* Assignments */,
 				954D35D724C3034000505FF6 /* main.swift */,
 			);
@@ -416,6 +427,7 @@
 			files = (
 				953E586224C7DD47000C3E5B /* RepeatingSequence.swift in Sources */,
 				953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */,
+				9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */,
 				954D35D824C3034000505FF6 /* main.swift in Sources */,
 				953E586624C7E51D000C3E5B /* String+DPStringTool.swift in Sources */,
 			);
