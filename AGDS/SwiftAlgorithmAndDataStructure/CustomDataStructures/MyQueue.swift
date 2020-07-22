@@ -8,7 +8,7 @@
 
 import Foundation
 
-public final class Queue<E> : Sequence {
+public final class MyQueue<E> : Sequence {
     
     private(set) var count = 0
     private var head: Node<E>? = nil

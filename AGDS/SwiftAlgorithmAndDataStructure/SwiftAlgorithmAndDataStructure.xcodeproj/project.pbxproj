@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331324C8AD5200287EE4 /* FindShortestPath.swift */; };
-		9538331524C8DB6B00287EE4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
+		9538331524C8DB6B00287EE4 /* MyQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* MyQueue.swift */; };
+		9538331924C8DED500287EE4 /* NewQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331824C8DED500287EE4 /* NewQ.swift */; };
+		9538331C24C8DF3E00287EE4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331624C8DE9200287EE4 /* Queue.swift */; };
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
 		953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E585F24C7CB6E000C3E5B /* Permutation.swift */; };
@@ -78,6 +80,8 @@
 
 /* Begin PBXFileReference section */
 		9538331324C8AD5200287EE4 /* FindShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindShortestPath.swift; sourceTree = "<group>"; };
+		9538331624C8DE9200287EE4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		9538331824C8DED500287EE4 /* NewQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQ.swift; sourceTree = "<group>"; };
 		95393C4F24A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmAndDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		95393C5224A26EFF00FF92F0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95393C5F24A2C52E00FF92F0 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
@@ -95,7 +99,7 @@
 		9563BDD324B54AA100ADBB31 /* NQueensPrblm */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NQueensPrblm; sourceTree = BUILT_PRODUCTS_DIR; };
 		9563BDD524B54AA100ADBB31 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9563BDDF24B54B1C00ADBB31 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
-		9577593024B7D09D00B1C98C /* Queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		9577593024B7D09D00B1C98C /* MyQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyQueue.swift; sourceTree = "<group>"; };
 		9577593224B7F1F000B1C98C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		9592482824B4183E000B22AE /* Sorting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sorting; sourceTree = BUILT_PRODUCTS_DIR; };
 		9592482A24B4183E000B22AE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
@@ -200,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				953E586524C7E51D000C3E5B /* String+DPStringTool.swift */,
+				9538331824C8DED500287EE4 /* NewQ.swift */,
 			);
 			path = Utis;
 			sourceTree = "<group>";
@@ -216,6 +221,7 @@
 		954D35D624C3034000505FF6 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
+				9538331624C8DE9200287EE4 /* Queue.swift */,
 				9538331224C8AD3600287EE4 /* TreeGraph */,
 				953E585E24C78C65000C3E5B /* Assignments */,
 				954D35D724C3034000505FF6 /* main.swift */,
@@ -249,7 +255,7 @@
 				9577593224B7F1F000B1C98C /* Stack.swift */,
 				954C95A024BA705A0079D41B /* Bag.swift */,
 				95CB5E6A24BD4B6400CEA584 /* PriorityQueue.swift */,
-				9577593024B7D09D00B1C98C /* Queue.swift */,
+				9577593024B7D09D00B1C98C /* MyQueue.swift */,
 			);
 			path = CustomDataStructures;
 			sourceTree = "<group>";
@@ -413,8 +419,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */,
-				9538331524C8DB6B00287EE4 /* Queue.swift in Sources */,
+				9538331524C8DB6B00287EE4 /* MyQueue.swift in Sources */,
 				9577593324B7F1F000B1C98C /* Stack.swift in Sources */,
+				9538331924C8DED500287EE4 /* NewQ.swift in Sources */,
 				954C95A124BA705A0079D41B /* Bag.swift in Sources */,
 				95CB5E6924BD327A00CEA584 /* GroupPresentation.swift in Sources */,
 				95393C5324A26EFF00FF92F0 /* main.swift in Sources */,
@@ -427,6 +434,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				953E586224C7DD47000C3E5B /* RepeatingSequence.swift in Sources */,
+				9538331C24C8DF3E00287EE4 /* Queue.swift in Sources */,
 				953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */,
 				9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */,
 				954D35D824C3034000505FF6 /* main.swift in Sources */,

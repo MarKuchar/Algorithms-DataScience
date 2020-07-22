@@ -10,7 +10,8 @@ import Foundation
 
 
 //findCycle()
-findRepeatingSequence()
+//findRepeatingSequence()
+findShortestPath()
 
 
 

@@ -25,7 +25,7 @@ func findShortestPath() {
         isRealRest[rest] = true
     }
     
-    for _ in 0..<numOfAllRest {
+    for _ in 0..<numOfAllRest-1 {
         let path = readLine()!.split(separator: " ").map { Int($0)! }
         let restA = path[0]
         let restB = path[1]
@@ -33,15 +33,28 @@ func findShortestPath() {
         adjListOfRest[restB].append(restA)
     }
     
-    var startRest: Int
+    var startRest = Int()
     var isVisited = [Bool](repeating: false, count: numOfAllRest)
     
     func BFS(_ start: Int, _ isVisited: inout [Bool], _ adjListOfRest: inout [[Int]]) {
+        let q = Queue<Int>()
+        q.enqueue(item: start)
         isVisited[start] = true
-        if arrayOfRealRest.contains(start) {
-            startRest = start
+        while !q.isEmpty() {
+            let r = q.dequeue()!
+            for i in adjListOfRest[r] {
+                if !isVisited[i] {
+                    q.enqueue(item: i)
+                    isVisited[i] = true
+                    if arrayOfRealRest.contains(i) {
+                        startRest = i
+                    }
+                }
+            }
         }
-        
     }
     
+    BFS(0, &isVisited, &adjListOfRest)
+    print(arrayOfRealRest)
+    print(startRest)
 }
