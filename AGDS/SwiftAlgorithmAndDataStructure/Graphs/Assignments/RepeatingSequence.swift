@@ -13,14 +13,21 @@ func findRepeatingSequence() {
     var digit = input[0]
     let power = input[1]
     var sequence = [Int]()
+    sequence.append(Int(digit)!)
+    var numOfInSequenceE = 0
     for _ in 0..<Int(digit)! {
         var sum = 0
         for i in 0..<digit.count {
             let num = Int(pow(Double(digit[i])!, Double(power)!))
             sum += num
         }
-        digit = String(sum)
+        if let start = sequence.lastIndex(of: sum) {
+            numOfInSequenceE = sequence.count - start - 1
+        } else {
+        }
         sequence.append(sum)
+        digit = String(sum)
     }
     print(sequence)
+    print(sequence.count - numOfInSequenceE)
 }
