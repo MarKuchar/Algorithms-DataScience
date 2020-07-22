@@ -9,5 +9,5 @@
 import Foundation
 
 
-findCycle()
-
+//findCycle()
+findRepeatingSequence()
