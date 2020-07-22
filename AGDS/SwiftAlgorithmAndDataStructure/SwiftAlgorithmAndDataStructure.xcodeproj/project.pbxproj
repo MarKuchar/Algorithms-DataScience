@@ -8,9 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331324C8AD5200287EE4 /* FindShortestPath.swift */; };
+		9538331524C8DB6B00287EE4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
-		953E585D24C7599D000C3E5B /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* Queue.swift */; };
 		953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E585F24C7CB6E000C3E5B /* Permutation.swift */; };
 		953E586224C7DD47000C3E5B /* RepeatingSequence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E586124C7DD47000C3E5B /* RepeatingSequence.swift */; };
 		953E586624C7E51D000C3E5B /* String+DPStringTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E586524C7E51D000C3E5B /* String+DPStringTool.swift */; };
@@ -154,12 +154,12 @@
 		95393C4624A26EFF00FF92F0 = {
 			isa = PBXGroup;
 			children = (
+				9577592F24B7CE3C00B1C98C /* CustomDataStructures */,
 				95393C5C24A2C21500FF92F0 /* Utis */,
 				95393C5124A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */,
 				9592482924B4183E000B22AE /* Sorting */,
 				9563BDD424B54AA100ADBB31 /* NQueensPrblm */,
 				954D35D624C3034000505FF6 /* Graphs */,
-				9577592F24B7CE3C00B1C98C /* CustomDataStructures */,
 				954D35E324C303AC00505FF6 /* Trees */,
 				95393C5024A26EFF00FF92F0 /* Products */,
 			);
@@ -226,7 +226,6 @@
 		954D35E324C303AC00505FF6 /* Trees */ = {
 			isa = PBXGroup;
 			children = (
-				9577593024B7D09D00B1C98C /* Queue.swift */,
 				954D35E424C303AC00505FF6 /* main.swift */,
 				954D35E924C303B600505FF6 /* TreeQuiz.swift */,
 				9560E59A24C64AFC00FE55B5 /* LowestCommonAncestor.swift */,
@@ -250,6 +249,7 @@
 				9577593224B7F1F000B1C98C /* Stack.swift */,
 				954C95A024BA705A0079D41B /* Bag.swift */,
 				95CB5E6A24BD4B6400CEA584 /* PriorityQueue.swift */,
+				9577593024B7D09D00B1C98C /* Queue.swift */,
 			);
 			path = CustomDataStructures;
 			sourceTree = "<group>";
@@ -413,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */,
+				9538331524C8DB6B00287EE4 /* Queue.swift in Sources */,
 				9577593324B7F1F000B1C98C /* Stack.swift in Sources */,
 				954C95A124BA705A0079D41B /* Bag.swift in Sources */,
 				95CB5E6924BD327A00CEA584 /* GroupPresentation.swift in Sources */,
@@ -440,7 +441,6 @@
 				954D35EA24C303B600505FF6 /* TreeQuiz.swift in Sources */,
 				954D35E524C303AC00505FF6 /* main.swift in Sources */,
 				9560E59B24C64AFC00FE55B5 /* LowestCommonAncestor.swift in Sources */,
-				953E585D24C7599D000C3E5B /* Queue.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

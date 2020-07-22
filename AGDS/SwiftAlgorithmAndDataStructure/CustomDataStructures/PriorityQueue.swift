@@ -32,6 +32,7 @@ public final class PriorityQueue<E> : Sequence {
         return count == 0
     }
     
+    
     public func enqueue(item: E) {
         let oldLast = tail
         self.tail = Node<E>(item)
