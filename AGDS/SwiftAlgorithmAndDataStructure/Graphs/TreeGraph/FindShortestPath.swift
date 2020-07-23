@@ -66,18 +66,20 @@ func findShortestPath() {
     }
     
     func separation(_ lastReal: Int, _ isVisited: inout [Bool], _ adjListOfRest: inout [[Int]]) {
+        var count = 0
         newArray.append(lastReal)
         let q = Queue<Int>()
         q.enqueue(item: lastReal)
         isVisited[lastReal] = true
         while !q.isEmpty() {
             let r = q.dequeue()!
+            count += 1
             for i in adjListOfRest[r] {
                 if !isVisited[i] {
                     if arrayOfRealRest.contains(i) && !newArray.contains(i) {
     
-                        arrayOfRealRest2[lastReal].append((i, abs(arrayOfAllRest[i].depht - arrayOfAllRest[lastReal].depht)))
-                        arrayOfRealRest2[i].append((lastReal, abs(arrayOfAllRest[i].depht - arrayOfAllRest[lastReal].depht)))
+                        arrayOfRealRest2[lastReal].append((i, count))
+                        arrayOfRealRest2[i].append((lastReal, count))
                         separation(i, &isVisited, &adjListOfRest)
                         continue
                     }
@@ -88,33 +90,42 @@ func findShortestPath() {
         }
     }
     
-//
-//    func BFS2(_ start: Int, _ isVisited: inout [Bool], _ adjListOfRest: inout [[Int]]) {
-//          var count = 0
-//          newArray.append(start)
-//          let q = Queue<Int>()
-//          q.enqueue(item: start)
-//          isVisited[start] = true
-//          while !q.isEmpty() {
-//              let r = q.dequeue()!
-//              count += 1
-//              for i in adjListOfRest[r] {
-//                if !isVisited[i] {
-//                  if arrayOfRealRest.contains(i) && !newArray.contains(i) {
-//                    arrayOfRealRest2[start].append((i, count))
-//                    arrayOfRealRest2[i].append((start, count))
-//
-//                    BFS2(i, &isVisited, &adjListOfRest)
-//                    continue
-//                  }
-//                  q.enqueue(item: i)
-//                  isVisited[i] = true
-//                }
-//              }
-//          }
-//      }
+    func shortestPath(_ lastReal: Int, _ isVisited: inout [Bool], _ adjListOfRest: inout [[Int]]) -> Int {
+        var count = 0
+        var firstBranch = 0
+        var secondBranch = 0
+        newArray.append(lastReal)
+        let q = Queue<Int>()
+        q.enqueue(item: lastReal)
+        isVisited[lastReal] = true
+        while !q.isEmpty() {
+            guard let r = q.dequeue() else {
+                return count
+            }
+            for i in arrayOfRealRest2[r] {
+                if !isVisited[i.0] {
+                    count += i.1
+                    isVisited[i.0] = true
+                    q.enqueue(item: i.0)
+                }
+            }
+            if q.count == 2 {
+                let a = q.dequeue()!
+                let b = q.dequeue()!
+                firstBranch = shortestPath(a, &isVisited, &adjListOfRest)
+                secondBranch = shortestPath(b, &isVisited, &adjListOfRest)
+                if firstBranch > secondBranch {
+                    return count + firstBranch + 2 * secondBranch + arrayOfRealRest2[r][a].1
+                } else {
+                    return count + 2 * firstBranch + arrayOfRealRest2[r][b].1 + secondBranch
+                }
+            }
+        }
+        return count
+    }
     
     var isVisited2 = [Bool](repeating: false, count: numOfAllRest)
+    var isVisited3 = [Bool](repeating: false, count: numOfAllRest)
 //    arrayOfRealRest3[0].depht = 0
     
     
@@ -124,4 +135,5 @@ func findShortestPath() {
     print(arrayOfAllRest)
     print(lastReal)
     print(arrayOfRealRest2)
+    print(shortestPath(lastReal, &isVisited3, &adjListOfRest))
 }
