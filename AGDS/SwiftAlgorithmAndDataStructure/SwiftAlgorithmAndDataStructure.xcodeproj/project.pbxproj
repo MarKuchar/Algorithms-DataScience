@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9530F50E24CF42BE00952004 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9530F50D24CF42BE00952004 /* UnionFind.swift */; };
 		9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331324C8AD5200287EE4 /* FindShortestPath.swift */; };
 		9538331524C8DB6B00287EE4 /* MyQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593024B7D09D00B1C98C /* MyQueue.swift */; };
-		9538331924C8DED500287EE4 /* NewQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331824C8DED500287EE4 /* NewQ.swift */; };
 		9538331C24C8DF3E00287EE4 /* Queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331624C8DE9200287EE4 /* Queue.swift */; };
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
@@ -79,9 +79,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9530F50D24CF42BE00952004 /* UnionFind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionFind.swift; sourceTree = "<group>"; };
 		9538331324C8AD5200287EE4 /* FindShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindShortestPath.swift; sourceTree = "<group>"; };
 		9538331624C8DE9200287EE4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
-		9538331824C8DED500287EE4 /* NewQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewQ.swift; sourceTree = "<group>"; };
 		95393C4F24A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmAndDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		95393C5224A26EFF00FF92F0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95393C5F24A2C52E00FF92F0 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
@@ -160,7 +160,7 @@
 			children = (
 				9577592F24B7CE3C00B1C98C /* CustomDataStructures */,
 				95393C5C24A2C21500FF92F0 /* Utis */,
-				95393C5124A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */,
+				95393C5124A26EFF00FF92F0 /* Class */,
 				9592482924B4183E000B22AE /* Sorting */,
 				9563BDD424B54AA100ADBB31 /* NQueensPrblm */,
 				954D35D624C3034000505FF6 /* Graphs */,
@@ -181,7 +181,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		95393C5124A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {
+		95393C5124A26EFF00FF92F0 /* Class */ = {
 			isa = PBXGroup;
 			children = (
 				95CB5E6724BD324A00CEA584 /* AlgorithmExercise */,
@@ -189,7 +189,7 @@
 				95393C6124A2C5B800FF92F0 /* story.txt */,
 				95393C5224A26EFF00FF92F0 /* main.swift */,
 			);
-			path = SwiftAlgorithmAndDataStructure;
+			path = Class;
 			sourceTree = "<group>";
 		};
 		95393C5A24A2BCE100FF92F0 /* Recursion */ = {
@@ -204,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				953E586524C7E51D000C3E5B /* String+DPStringTool.swift */,
-				9538331824C8DED500287EE4 /* NewQ.swift */,
 			);
 			path = Utis;
 			sourceTree = "<group>";
@@ -255,6 +254,7 @@
 				9577593224B7F1F000B1C98C /* Stack.swift */,
 				954C95A024BA705A0079D41B /* Bag.swift */,
 				95CB5E6A24BD4B6400CEA584 /* PriorityQueue.swift */,
+				9530F50D24CF42BE00952004 /* UnionFind.swift */,
 				9577593024B7D09D00B1C98C /* MyQueue.swift */,
 			);
 			path = CustomDataStructures;
@@ -420,8 +420,8 @@
 			files = (
 				95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */,
 				9538331524C8DB6B00287EE4 /* MyQueue.swift in Sources */,
+				9530F50E24CF42BE00952004 /* UnionFind.swift in Sources */,
 				9577593324B7F1F000B1C98C /* Stack.swift in Sources */,
-				9538331924C8DED500287EE4 /* NewQ.swift in Sources */,
 				954C95A124BA705A0079D41B /* Bag.swift in Sources */,
 				95CB5E6924BD327A00CEA584 /* GroupPresentation.swift in Sources */,
 				95393C5324A26EFF00FF92F0 /* main.swift in Sources */,
