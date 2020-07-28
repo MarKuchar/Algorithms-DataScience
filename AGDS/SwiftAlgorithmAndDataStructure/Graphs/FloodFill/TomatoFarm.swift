@@ -26,12 +26,21 @@ func numOfDays() {
         farm.append(readLine()!.split(separator: " ").map { Int($0)! })
     }
     
-    func ripeAdjc(_ square: Square) -> Int {
+    func ripeAdjc() -> Int {
         let q = Queue<Square>()
-        q.enqueue(item: square)
-        let qAdj = Queue<Int>()
-        qAdj.enqueue(item: 0)
-        var duration = -1
+        let qAdj = Queue<Int>() // another queue to keep track of the depth from the current square
+        
+        // Enqueue all the 1s and will do BFS from all the 1s at once.
+        for i in 0..<farmHeight {
+            for j in 0..<farmWidth {
+                if farm[i][j] == 1 {
+                    q.enqueue(item: Square(x: i, y: j))
+                    qAdj.enqueue(item: 0)
+                }
+            }
+        }
+
+        var duration = Int()
         
         while !q.isEmpty() {
             let s = q.dequeue()!
@@ -54,14 +63,9 @@ func numOfDays() {
     
     var numOfDays = 0
     
-    for i in 0..<farmHeight {
-        for j in 0..<farmWidth {
-            if farm[i][j] == 1 {
-              numOfDays += ripeAdjc(Square(x: i, y: j))
-            }
-        }
-    }
+    numOfDays += ripeAdjc()
     
+    // Check if all the 0s were changed to 1s otherwise return -1
     for i in 0..<farmHeight {
         for j in 0..<farmWidth {
             if farm[i][j] == 0 {
@@ -70,8 +74,5 @@ func numOfDays() {
         }
     }
     
-    for i in farm {
-        print(i)
-    }
     print(numOfDays)
 }
