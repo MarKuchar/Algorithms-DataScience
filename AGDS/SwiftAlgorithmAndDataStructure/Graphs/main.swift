@@ -11,7 +11,8 @@ import Foundation
 
 //findCycle()
 //findRepeatingSequence()
-findShortestPath()
+//findShortestPath()
+shortestBrige()
 
 
 
