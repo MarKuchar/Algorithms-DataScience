@@ -21,8 +21,7 @@ func shortestBrige() {
     var gridSeparated = [[Int]](repeating: [Int](repeating: 0, count: gridSize), count: gridSize)
     
     for _ in 0..<gridSize {
-        let line = readLine()!.split(separator: " ").map { Int($0)! }
-        grid.append(line)
+        grid.append(readLine()!.split(separator: " ").map { Int($0)! })
     }
     
     // Assign different num to the disconnected islands
@@ -97,10 +96,6 @@ func shortestBrige() {
                }
            }
        }
-      
-    for i in gridSeparated {
-        print(i)
-    }
     
     print(bridgeSize)
 }

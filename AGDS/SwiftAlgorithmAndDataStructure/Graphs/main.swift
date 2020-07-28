@@ -9,10 +9,8 @@
 import Foundation
 
 
-//findCycle()
-//findRepeatingSequence()
-//findShortestPath()
-shortestBrige()
+//shortestBrige()
+numOfDays()
 
 
 
