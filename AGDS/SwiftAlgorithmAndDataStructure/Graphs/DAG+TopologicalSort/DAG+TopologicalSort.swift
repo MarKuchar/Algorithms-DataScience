@@ -30,11 +30,9 @@ func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
         let p = queue.removeFirst()
         coursePassed[p] = true
         for i in adjList[p] {
-            if inDegreeList[i] == 1 {
+            inDegreeList[i] -= 1
+            if inDegreeList[i] == 0 {
                queue.append(i)
-            }
-            if inDegreeList[i] >= 1 {
-                inDegreeList[i] -= 1
             }
         }
     }
@@ -46,3 +44,37 @@ func canFinish(_ numCourses: Int, _ prerequisites: [[Int]]) -> Bool {
     return true
 }
 
+func findOrder(_ numCourses: Int, _ prerequisites: [[Int]]) -> [Int] {
+    var courseFinished = [Int]()
+    var adjList = [[Int]](repeating: [], count: numCourses)
+    var inDegreeList = [Int](repeating: 0, count: numCourses)
+    
+    for i in prerequisites {
+        adjList[i[1]].append(i[0])
+        inDegreeList[i[0]] += 1
+    }
+    
+    var queue = [Int]()
+    for i in 0..<inDegreeList.count {
+        if inDegreeList[i] == 0 {
+            queue.append(i)
+        }
+    }
+    
+    while !queue.isEmpty {
+        let a = queue.removeFirst()
+        courseFinished.append(a)
+        for i in adjList[a] {
+            inDegreeList[i] -= 1
+            if inDegreeList[i] == 0 {
+                queue.append(i)
+            }
+        }
+    }
+    
+    if courseFinished.count == numCourses {
+        return courseFinished
+    } else {
+        return []
+    }
+}
