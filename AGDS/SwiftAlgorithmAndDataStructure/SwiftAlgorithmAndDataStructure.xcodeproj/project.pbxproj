@@ -27,6 +27,7 @@
 		9563BDE124B54B1C00ADBB31 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9563BDDF24B54B1C00ADBB31 /* Board.swift */; };
 		9577593324B7F1F000B1C98C /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9577593224B7F1F000B1C98C /* Stack.swift */; };
 		9592482B24B4183E000B22AE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9592482A24B4183E000B22AE /* main.swift */; };
+		95A070CC24D0FD1E00C31F16 /* DAG+TopologicalSort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A070CB24D0FD1E00C31F16 /* DAG+TopologicalSort.swift */; };
 		95CB5E6924BD327A00CEA584 /* GroupPresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB5E6824BD327A00CEA584 /* GroupPresentation.swift */; };
 		95CB5E6B24BD4B6400CEA584 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CB5E6A24BD4B6400CEA584 /* PriorityQueue.swift */; };
 		95D8C75024B68D4D00D049A8 /* QueensSolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D8C74F24B68D4D00D049A8 /* QueensSolver.swift */; };
@@ -107,6 +108,7 @@
 		9577593224B7F1F000B1C98C /* Stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
 		9592482824B4183E000B22AE /* Sorting */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Sorting; sourceTree = BUILT_PRODUCTS_DIR; };
 		9592482A24B4183E000B22AE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		95A070CB24D0FD1E00C31F16 /* DAG+TopologicalSort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DAG+TopologicalSort.swift"; sourceTree = "<group>"; };
 		95CB5E6824BD327A00CEA584 /* GroupPresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupPresentation.swift; sourceTree = "<group>"; };
 		95CB5E6A24BD4B6400CEA584 /* PriorityQueue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		95D8C74F24B68D4D00D049A8 /* QueensSolver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QueensSolver.swift; sourceTree = "<group>"; };
@@ -233,8 +235,9 @@
 		954D35D624C3034000505FF6 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
-				9530F50F24CF7A1300952004 /* FloodFill */,
 				9538331624C8DE9200287EE4 /* Queue.swift */,
+				95A070CA24D0FD0300C31F16 /* DAG+TopologicalSort */,
+				9530F50F24CF7A1300952004 /* FloodFill */,
 				9538331224C8AD3600287EE4 /* TreeGraph */,
 				953E585E24C78C65000C3E5B /* Assignments */,
 				954D35D724C3034000505FF6 /* main.swift */,
@@ -280,6 +283,14 @@
 				9592482A24B4183E000B22AE /* main.swift */,
 			);
 			path = Sorting;
+			sourceTree = "<group>";
+		};
+		95A070CA24D0FD0300C31F16 /* DAG+TopologicalSort */ = {
+			isa = PBXGroup;
+			children = (
+				95A070CB24D0FD1E00C31F16 /* DAG+TopologicalSort.swift */,
+			);
+			path = "DAG+TopologicalSort";
 			sourceTree = "<group>";
 		};
 		95CB5E6724BD324A00CEA584 /* AlgorithmExercise */ = {
@@ -453,6 +464,7 @@
 				9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */,
 				9530F51124CF7A2900952004 /* FloodFillAssignment.swift in Sources */,
 				9530F51324CFA60100952004 /* TomatoFarm.swift in Sources */,
+				95A070CC24D0FD1E00C31F16 /* DAG+TopologicalSort.swift in Sources */,
 				954D35D824C3034000505FF6 /* main.swift in Sources */,
 				953E586624C7E51D000C3E5B /* String+DPStringTool.swift in Sources */,
 			);

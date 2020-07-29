@@ -9,8 +9,7 @@
 import Foundation
 
 
-//shortestBrige()
-numOfDays()
+print(canFinish(9, [[1,0],[0,1]]))
 
 
 
