@@ -8,5 +8,4 @@
 
 import Foundation
 
-print(leastInterval(["A","A","A","B","B","B"], 0))
-
+print(canCompleteCircuit([2,3,4], [2,4,3]))

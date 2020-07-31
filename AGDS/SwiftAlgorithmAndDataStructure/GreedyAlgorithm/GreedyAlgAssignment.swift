@@ -48,3 +48,30 @@ func leastInterval(_ tasks: [Character], _ n: Int) -> Int {
         return tasks.count
     }
 }
+
+func canCompleteCircuit(_ gas: [Int], _ cost: [Int]) -> Int {
+    var starts = [Int]()
+    var arr = [Int]()
+    for i in 0..<gas.count {
+        arr.append(gas[i] - cost[i])
+        if gas[i] - cost[i] >= 0 {
+            starts.append(i)
+        }
+    }
+
+    while !starts.isEmpty {
+        var fuel = 0
+        let possibleStart = starts.removeFirst()
+        fuel += arr[possibleStart]
+        for i in 1...gas.count {
+            if (i + possibleStart) % gas.count == possibleStart {
+                return possibleStart
+            }
+            fuel += arr[((i + possibleStart) % gas.count)]
+            if fuel < 0 {
+                break
+            }
+        }
+    }
+    return -1
+}
