@@ -8,4 +8,6 @@
 
 import Foundation
 
-print(canCompleteCircuit([2,3,4], [2,4,3]))
+//print(canCompleteCircuit([2,3,4], [2,4,3]))
+
+print(partitionLabels("ababcbacadefegdehijhklij"))

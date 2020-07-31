@@ -75,3 +75,28 @@ func canCompleteCircuit(_ gas: [Int], _ cost: [Int]) -> Int {
     }
     return -1
 }
+
+func partitionLabels(_ S: String) -> [Int] {
+    let charArr = Array(S)
+    var stringParts = [Int]()
+    var index = 0
+    
+    while index < charArr.count {
+        var set = Set<Character>()
+        set.insert(charArr[index])
+        for i in index..<charArr.count {
+            if set.contains(charArr[i]) {
+                for j in index...i {
+                    set.insert(charArr[j])
+                }
+                index = i + 1
+            }
+        }
+        stringParts.append(index)
+    }
+
+    for i in (1..<stringParts.count).reversed() {
+        stringParts[i] = stringParts[i] - stringParts[i - 1]
+    }
+    return stringParts
+}
