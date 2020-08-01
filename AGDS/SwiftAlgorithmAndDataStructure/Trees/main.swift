@@ -2,15 +2,12 @@
 //  main.swift
 //  Trees
 //
-//  Created by Martin Kuchar on 2020-07-18.
+//  Created by Martin Kuchar on 2020-07-29.
 //  Copyright © 2020 Martin Kuchar. All rights reserved.
 //
 
 import Foundation
 
-//printParent()
-//diameter()
 
-commonAncestor()
-
-
+let mst = MST()
+print(mst.kruskalMST([[(1, 5), (3, 4)], [(0, 5), (3, 2), (2, 3)], [(1, 3), (3, 6)], [(0, 4), (1, 2), (2, 6)]]))
