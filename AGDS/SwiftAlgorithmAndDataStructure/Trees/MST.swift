@@ -10,13 +10,41 @@ import Foundation
 
 /// Minimum Spanning Tree Algorithms
 public final class MST {
-  
+
   /// Prim's MST Algorithm O(ElgV)
   /// Use Priority Queue (Binary Heap) and Adjacency List
   /// - Parameter graph: adjacency list of weighted undirected graph where each edge is stored as Tuple
   /// - Returns: the minimum cost spanning tree
+    
+    struct Edge: Comparable, Hashable {
+        let to: Int
+        let weight: Int
+        static func < (lhs: MST.Edge, rhs: MST.Edge) -> Bool {
+            return lhs.weight < rhs.weight
+        }
+    }
+    
   public func primMST(_ graph: [[(v: Int, w: Int)]]) -> Int {
-    return 0
+    var queue = IndexPriorityQueue<Edge>(>)
+    var isVisited = [Bool](repeating: false, count: graph.count)
+    
+    queue.enqueue(Edge(to: 0, weight: 0))
+    var count = 0
+    var minCost = 0
+    
+    while count != graph.count {
+        let edge = queue.dequeue()!
+        count += 1
+        let vertex = edge.to
+        isVisited[vertex] = true
+        minCost += edge.weight
+        for v in graph[vertex] {
+            if !isVisited[v.v] {
+                queue.enqueue(Edge(to: v.v, weight: v.w))
+            }
+        }
+    }
+    return minCost
   }
   
   /// Kruskal's MST Algorithm O(ElgE)
@@ -46,8 +74,7 @@ public final class MST {
         }
     }
     print(unionFind)
-    print(minCost)
-    return 0
+    return minCost
   }
 }
 

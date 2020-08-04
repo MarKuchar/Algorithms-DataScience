@@ -13,6 +13,7 @@
 		9535CDD224D2202C00022B55 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535CDD124D2202C00022B55 /* main.swift */; };
 		9535CDD624D2203600022B55 /* GreedyAlgAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535CDC924D21F9800022B55 /* GreedyAlgAssignment.swift */; };
 		9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331324C8AD5200287EE4 /* FindShortestPath.swift */; };
+		9538D73D24D6B01700502395 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538D73C24D6B01700502395 /* PriorityQueue.swift */; };
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
 		953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E585F24C7CB6E000C3E5B /* Permutation.swift */; };
@@ -104,6 +105,7 @@
 		9535CDD124D2202C00022B55 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		9538331324C8AD5200287EE4 /* FindShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindShortestPath.swift; sourceTree = "<group>"; };
 		9538331624C8DE9200287EE4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
+		9538D73C24D6B01700502395 /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
 		95393C4F24A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmAndDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		95393C5224A26EFF00FF92F0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95393C5F24A2C52E00FF92F0 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
@@ -287,9 +289,9 @@
 			isa = PBXGroup;
 			children = (
 				957DD33724D5723C00C696D0 /* CustomDS */,
+				957DD33324D56FE700C696D0 /* MST.swift */,
 				954D35E424C303AC00505FF6 /* main.swift */,
 				954D35E924C303B600505FF6 /* TreeQuiz.swift */,
-				957DD33324D56FE700C696D0 /* MST.swift */,
 				9560E59A24C64AFC00FE55B5 /* LowestCommonAncestor.swift */,
 			);
 			path = Trees;
@@ -320,6 +322,7 @@
 		957DD33724D5723C00C696D0 /* CustomDS */ = {
 			isa = PBXGroup;
 			children = (
+				9538D73C24D6B01700502395 /* PriorityQueue.swift */,
 				957DD33824D5724E00C696D0 /* UF.swift */,
 				957DD33A24D5753700C696D0 /* Queue.swift */,
 			);
@@ -558,6 +561,7 @@
 				954D35EA24C303B600505FF6 /* TreeQuiz.swift in Sources */,
 				954D35E524C303AC00505FF6 /* main.swift in Sources */,
 				957DD33924D5724E00C696D0 /* UF.swift in Sources */,
+				9538D73D24D6B01700502395 /* PriorityQueue.swift in Sources */,
 				9560E59B24C64AFC00FE55B5 /* LowestCommonAncestor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
