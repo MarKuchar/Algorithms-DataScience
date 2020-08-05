@@ -292,10 +292,10 @@
 			children = (
 				957DD33724D5723C00C696D0 /* CustomDS */,
 				957DD33324D56FE700C696D0 /* MST.swift */,
-				954D35E424C303AC00505FF6 /* main.swift */,
 				954D35E924C303B600505FF6 /* TreeQuiz.swift */,
 				9560E59A24C64AFC00FE55B5 /* LowestCommonAncestor.swift */,
 				95B9018424DA38030082CE0E /* MinimumCostFlow.swift */,
+				954D35E424C303AC00505FF6 /* main.swift */,
 			);
 			path = Trees;
 			sourceTree = "<group>";
