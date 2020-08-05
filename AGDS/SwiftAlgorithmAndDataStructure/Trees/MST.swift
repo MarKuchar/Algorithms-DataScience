@@ -32,15 +32,16 @@ public final class MST {
     var count = 0
     var minCost = 0
     
-    while count != graph.count {
+    while !queue.isEmpty {
         let edge = queue.dequeue()!
-        count += 1
-        let vertex = edge.to
-        isVisited[vertex] = true
-        minCost += edge.weight
-        for v in graph[vertex] {
-            if !isVisited[v.v] {
-                queue.enqueue(Edge(to: v.v, weight: v.w))
+        if !isVisited[edge.to] {
+            let vertex = edge.to
+            isVisited[vertex] = true
+            minCost += edge.weight
+            for v in graph[vertex] {
+                if !isVisited[v.v] {
+                    queue.enqueue(Edge(to: v.v, weight: v.w))
+                }
             }
         }
     }
