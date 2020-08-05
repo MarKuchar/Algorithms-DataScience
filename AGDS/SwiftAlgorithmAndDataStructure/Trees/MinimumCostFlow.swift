@@ -91,9 +91,10 @@ func minimumCostFlow(_ testInput: [String]) -> Int {
             }
         }
     }
-    print(days)
+//    print(days)
     return days
 }
+
 
 func testCases(inFile: String, outFile: String? = nil) -> Int {
     func readFile(_ path: String) -> [String] {
@@ -114,7 +115,7 @@ func testCases(inFile: String, outFile: String? = nil) -> Int {
     let output = readFile(outFile!)
     let answer = Int(output[0])!
     if result == answer {
-        print("Success\n")
+        print("Success(expected:\(answer) - result:\(result))\n")
     } else {
         print("Fail (expected:\(answer) - result:\(result))\n")
     }

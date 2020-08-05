@@ -15,7 +15,7 @@ let mst = MST()
 
 //minimumCostFlow([])
 
-for j in 1...15 {
+for j in 1...50 {
     let i = String(format: "%.2d", j)
     let testCase = "/Users/martin.kuchar/Downloads/mcf/mcf.\(i)"
 //    if let url = URL.init(string: testCase) {
