@@ -12,3 +12,6 @@ import Foundation
 //print(findOrder(9, [[4, 1], [0, 1], [4, 2], [5, 3], [7, 4], [7, 5], [6, 5], [6, 7], [8, 6], [8, 7]]))
 //print(canFinish(9, [[1, 0], [0, 1]]))
 
+let s = Solution()
+print(s.networkDelayTime([[1,2,1]], 2, 2))
+

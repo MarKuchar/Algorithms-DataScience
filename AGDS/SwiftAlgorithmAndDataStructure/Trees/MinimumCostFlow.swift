@@ -38,7 +38,7 @@ func minimumCostFlow(_ testInput: [String]) -> Int {
     let firstLine = readLine()!.split(separator: " ").map { Int($0)! }
     let n = firstLine[0]
     let m = firstLine[1]
-    let d = firstLine[2]
+    let _ = firstLine[2]
 
     var pipeArr = [[Pipe]](repeating: [], count: n + 1)
     var pipeQueue = IndexPriorityQueue<Pipe>(>)
@@ -123,7 +123,7 @@ func testCases(inFile: String, outFile: String? = nil) -> Int {
 }
 
 
-public struct IndexPriorityQueue<Key: Comparable & Hashable> {
+fileprivate struct IndexPriorityQueue<Key: Comparable & Hashable> {
   /// the array that stores the heap's nodes
   private(set) var elements = [Key]()
   /// determines whether this is a max-heap(>) or min-heap(<)
@@ -263,7 +263,7 @@ public struct IndexPriorityQueue<Key: Comparable & Hashable> {
 
 import Foundation
 
-public final class PriorityQueue<E> : Sequence {
+fileprivate final class PriorityQueue<E> : Sequence {
     
     private(set) var count = 0
     private var head: Node<E>? = nil

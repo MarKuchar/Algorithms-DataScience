@@ -14,6 +14,7 @@
 		9535CDD624D2203600022B55 /* GreedyAlgAssignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9535CDC924D21F9800022B55 /* GreedyAlgAssignment.swift */; };
 		9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538331324C8AD5200287EE4 /* FindShortestPath.swift */; };
 		9538D73D24D6B01700502395 /* PriorityQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538D73C24D6B01700502395 /* PriorityQueue.swift */; };
+		9538F66924DC66B500B081C9 /* ShortestPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9538F66824DC66B500B081C9 /* ShortestPath.swift */; };
 		95393C5324A26EFF00FF92F0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5224A26EFF00FF92F0 /* main.swift */; };
 		95393C6024A2C52E00FF92F0 /* Recursion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95393C5F24A2C52E00FF92F0 /* Recursion.swift */; };
 		953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 953E585F24C7CB6E000C3E5B /* Permutation.swift */; };
@@ -107,6 +108,7 @@
 		9538331324C8AD5200287EE4 /* FindShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindShortestPath.swift; sourceTree = "<group>"; };
 		9538331624C8DE9200287EE4 /* Queue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Queue.swift; sourceTree = "<group>"; };
 		9538D73C24D6B01700502395 /* PriorityQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityQueue.swift; sourceTree = "<group>"; };
+		9538F66824DC66B500B081C9 /* ShortestPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShortestPath.swift; sourceTree = "<group>"; };
 		95393C4F24A26EFF00FF92F0 /* SwiftAlgorithmAndDataStructure */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SwiftAlgorithmAndDataStructure; sourceTree = BUILT_PRODUCTS_DIR; };
 		95393C5224A26EFF00FF92F0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		95393C5F24A2C52E00FF92F0 /* Recursion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recursion.swift; sourceTree = "<group>"; };
@@ -210,6 +212,14 @@
 			path = TreeGraph;
 			sourceTree = "<group>";
 		};
+		9538F66724DC66A600B081C9 /* ShortestPath */ = {
+			isa = PBXGroup;
+			children = (
+				9538F66824DC66B500B081C9 /* ShortestPath.swift */,
+			);
+			path = ShortestPath;
+			sourceTree = "<group>";
+		};
 		95393C4624A26EFF00FF92F0 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +287,7 @@
 		954D35D624C3034000505FF6 /* Graphs */ = {
 			isa = PBXGroup;
 			children = (
+				9538F66724DC66A600B081C9 /* ShortestPath */,
 				9577593024B7D09D00B1C98C /* MyQueue.swift */,
 				95A070CA24D0FD0300C31F16 /* DAG+TopologicalSort */,
 				9530F50F24CF7A1300952004 /* FloodFill */,
@@ -547,6 +558,7 @@
 				953E586224C7DD47000C3E5B /* RepeatingSequence.swift in Sources */,
 				957DD33524D5721E00C696D0 /* MyQueue.swift in Sources */,
 				953E586024C7CB6E000C3E5B /* Permutation.swift in Sources */,
+				9538F66924DC66B500B081C9 /* ShortestPath.swift in Sources */,
 				9538331424C8AD5200287EE4 /* FindShortestPath.swift in Sources */,
 				9530F51124CF7A2900952004 /* FloodFillAssignment.swift in Sources */,
 				9530F51324CFA60100952004 /* TomatoFarm.swift in Sources */,
