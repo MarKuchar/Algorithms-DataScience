@@ -20,7 +20,7 @@ class Solution {
         for _ in 0..<N {
             var min = Int.max
             var minV = K
-            for j in 1..<N + 1 {
+            for j in 1...N {
                 if !checked[j] && distance[j] < min {
                     min = distance[j]
                     minV = j
@@ -43,5 +43,43 @@ class Solution {
             }
         }
         return maxTime
+    }
+    
+    func findCheapestPrice(_ n: Int, _ flights: [[Int]], _ src: Int, _ dst: Int, _ K: Int) -> Int {
+        var adjList = [[(to: Int, w: Int)]](repeating: [], count: n + 1)
+        var checked = [Bool](repeating: false, count: n + 1)
+        for edge in flights {
+            adjList[edge[0]].append((to: edge[1], w: edge[2]))
+        }
+        var journey = [(dist: Int, stops: Int)](repeating: (dist: Int.max, stops: 0), count: n + 1)
+        journey[src] = (dist: 0, stops: 0)
+        for _ in 0..<n {
+            var minD = Int.max
+            var minV = src
+            for i in 0..<n {
+                if journey[i].dist < minD && !checked[i] {
+                    minV = i
+                    minD = journey[i].dist
+                }
+            }
+            checked[minV] = true
+            for i in adjList[minV] {
+                if journey[i.to].dist > journey[minV].dist + i.w {
+                    let next = minV == src ? 0 : journey[minV].stops + 1
+                    if (i.to == dst && next > K) || (i.to != dst && next + 1 > K) {
+                        continue
+                    }
+                    journey[i.to].stops = minV == src ? 0 : journey[minV].stops + 1
+                    journey[i.to].dist = journey[minV].dist + i.w
+                }
+            }
+        }
+        guard journey[dst].stops <= K else {
+            return -1
+        }
+        guard journey[dst].dist != Int.max else {
+            return -1
+        }
+        return journey[dst].dist
     }
 }

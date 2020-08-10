@@ -13,5 +13,5 @@ import Foundation
 //print(canFinish(9, [[1, 0], [0, 1]]))
 
 let s = Solution()
-print(s.networkDelayTime([[1,2,1]], 2, 2))
-
+print(s.findCheapestPrice(3, [[0,1,100],[1,2,100],[0,2,500]], 0, 2, 1))
+    
