@@ -46,126 +46,81 @@ class Solution {
     }
     
     func findCheapestPrice(_ n: Int, _ flights: [[Int]], _ src: Int, _ dst: Int, _ K: Int) -> Int {
-        var adjList = [[(to: Int, w: Int)]](repeating: [], count: n + 1)
-        var checked = [Bool](repeating: false, count: n + 1)
-        for edge in flights {
-            adjList[edge[0]].append((to: edge[1], w: edge[2]))
+        var adjList = [[(to: Int, w: Int)]](repeating: [(to: Int, w: Int)](), count: n + 1)
+        let q = Queue<(Int, Int)>()
+        var d = [[Int]](repeating: [Int](repeating: Int.max, count: K + 2), count: n + 1)
+        for f in flights {
+            adjList[f[0]].append((f[1], f[2]))
         }
-        var journey = [(dist: Int, stops: Int)](repeating:(dist: Int.max, stops: 0), count: n + 1)
-        journey[src] = (dist: 0, stops: 0)
         
+        q.enqueue(item: (src, 0))
+        d[src][0] = 0
         
-        for _ in 0..<n {
-            var minD = Int.max
-            var minV = src
-            for i in 0..<n {
-                if journey[i].dist < minD && !checked[i] {
-                    minV = i
-                    minD = journey[i].dist
+        print(adjList)
+        while let edge = q.dequeue() {
+            let stepsTo = edge.1 + 1
+            for e in adjList[edge.0] {
+                if d[e.to][stepsTo] > d[edge.0][edge.1] + e.w {
+                    d[e.to][stepsTo] = d[edge.0][edge.1] + e.w
                 }
-            }
-            checked[minV] = true
-            for i in adjList[minV] {
-                if journey[i.to].dist > journey[minV].dist + i.w {
-                    let next = minV == src ? 0 : journey[minV].stops + 1
-                    if (i.to == dst && next > K) || (i.to != dst && next + 1 > K) {
-                        continue
-                    }
-                    journey[i.to].stops = minV == src ? 0 : journey[minV].stops + 1
-                    journey[i.to].dist = journey[minV].dist + i.w
+                if e.to != dst && stepsTo <= K {
+                    q.enqueue(item: (e.to, stepsTo))
                 }
             }
         }
-        guard journey[dst].stops <= K else {
+        
+        if let price = d[dst].min(), price < Int.max {
+            return price
+        } else {
             return -1
         }
-        guard journey[dst].dist != Int.max else {
-            return -1
-        }
-        return journey[dst].dist
     }
 }
 
-fileprivate final class QueueM<E> : Sequence {
-    /// beginning of queue
-    private var first: Node<E>? = nil
-    /// end of queue
-    private var last: Node<E>? = nil
-    /// size of the queue
-    private(set) var count: Int = 0
 
-    /// helper linked list node class
-    fileprivate class Node<E> {
-        fileprivate var item: E
-        fileprivate var next: Node<E>?
-        fileprivate init(item: E, next: Node<E>? = nil) {
-            self.item = item
-            self.next = next
-        }
+fileprivate final class Queue<E> {
+    private(set) var count: Int
+    fileprivate var first: Node<E>?
+    fileprivate var last: Node<E>?
+    init() {
+        self.count = 0
+        self.first = nil
+        self.last = nil
     }
-
-    /// Initializes an empty queue.
-    public init() {}
-
-    /// Returns true if this queue is empty.
-    public func isEmpty() -> Bool {
-        return first == nil
-    }
-
-    /// Returns the item least recently added to this queue.
-    public func peek() -> E? {
-        return first?.item
-    }
-
-    /// Adds the item to this queue
-    /// - Parameter item: the item to add
     public func enqueue(item: E) {
-        let oldLast = last
-        last = Node<E>(item: item)
-        if isEmpty() { first = last }
-        else { oldLast?.next = last }
-        count += 1
+        let newNode = Node.init(item)
+        if isEmpty() {
+            self.first = newNode
+            self.last = newNode
+        } else {
+            self.last!.next = newNode
+            self.last = newNode
+        }
+        self.count += 1
     }
-
-    /// Removes and returns the item on this queue that was least recently added.
     public func dequeue() -> E? {
-        if let item = first?.item {
-            first = first?.next
-            count -= 1
-            // to avoid loitering
-            if isEmpty() { last = nil }
-            return item
+        if let node = self.first {
+            self.first = node.next
+            self.count -= 1
+            return node.value
         }
         return nil
     }
-
-    /// QueueIterator that iterates over the items in FIFO order.
-    public struct QueueIterator<E> : IteratorProtocol {
-        private var current: Node<E>?
-
-        fileprivate init(_ first: Node<E>?) {
-            self.current = first
+    public func peek() -> E? {
+        if let node = self.first {
+            return node.value
         }
-
-        public mutating func next() -> E? {
-            if let item = current?.item {
-                current = current?.next
-                return item
-            }
-            return nil
-        }
-
-        public typealias Element = E
+        return nil
     }
-
-    /// Returns an iterator that iterates over the items in this Queue in FIFO order.
-    public __consuming func makeIterator() -> QueueIterator<E> {
-        return QueueIterator<E>(first)
+    public func isEmpty() -> Bool {
+        return self.first == nil
     }
 }
-
-extension QueueM: CustomStringConvertible {
-    public var description: String {
-        return self.reduce(into: "") { $0 += "\($1) " }
+fileprivate class Node<T> {
+    let value: T
+    var next: Node<T>?
+    init(_ value: T, _ next: Node<T>? = nil) {
+        self.value = value
+        self.next = next
     }
 }
