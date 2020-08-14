@@ -8,7 +8,7 @@
 
 import Foundation
 
-fileprivate final class Queue<E> : Sequence {
+public final class Queue<E> : Sequence {
     
     private(set) var count = 0
     private var head: Node<E>? = nil
@@ -98,6 +98,7 @@ func numOfDays() {
     for _ in 0..<farmHeight {
         farm.append(readLine()!.split(separator: " ").map { Int($0)! })
     }
+    print(farm)
     
     func ripeAdjc() -> Int {
         let q = Queue<Square>()

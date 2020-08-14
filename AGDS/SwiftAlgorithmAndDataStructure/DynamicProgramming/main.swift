@@ -125,4 +125,22 @@ func maxSubArray(_ nums: [Int]) -> Int {
     return max
 }
 
-print(maxSubArray([]))
+//print(maxSubArray([]))
+
+func judgeSquareSum(_ c: Int) -> Bool {
+    var dp = [Int]()
+    for i in 0...Int(sqrt(Double(c) + 1)) {
+        dp.append(i * i)
+    }
+    
+    for i in 0..<dp.count {
+        for j in 0..<dp.count {
+            if dp[i] + dp[j] == c {
+                return true
+            }
+        }
+    }
+    return false
+}
+
+print(judgeSquareSum(4))
